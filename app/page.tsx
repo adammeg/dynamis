@@ -474,54 +474,57 @@ export default function HomePage() {
 
             {/* Carousel of client logos and testimonials */}
             <Carousel>
-              {[
-                {
-                  name: "Acme Corp",
-                  logo: "/darblockahin.png",
-                  description: "Acme Corp saw a 200% increase in efficiency after working with us.",
-                },
-                {
-                  name: "Globex Inc.",
-                  logo: "/darblockahin.png",
-                  description: "Globex Inc. loved our fast turnaround and quality results.",
-                },
-                {
-                  name: "Globex Inc.",
-                  logo: "/darblockahin.png",
-                  description: "Globex Inc. loved our fast turnaround and quality results.",
-                },
-                {
-                  name: "Globex Inc.",
-                  logo: "/darblockahin.png",
-                  description: "Globex Inc. loved our fast turnaround and quality results.",
-                },
-                {
-                  name: "Globex Inc.",
-                  logo: "/darblockahin.png",
-                  description: "Globex Inc. loved our fast turnaround and quality results.",
-                },
-                {
-                  name: "Globex Inc.",
-                  logo: "/darblockahin.png",
-                  description: "Globex Inc. loved our fast turnaround and quality results.",
-                },
                 // Add more clients as needed
-              ].map((client, idx) => (
-                <div
-                  key={idx}
-                  className="flex flex-col items-center bg-gray-800/80 rounded-xl shadow-lg p-8 mx-4 min-w-[260px] max-w-xs"
-                >
-                  <div className="flex items-center justify-center h-20 w-20 rounded-full bg-gray-700 mb-4 overflow-hidden">
-                    <img
-                      src={client.logo}
-                      alt={client.name + " logo"}
-                      className="h-16 w-16 object-contain"
-                    />
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full px-4">
+                {[
+                  {
+                    name: "Acme Corp",
+                    logo: "/darblockahin.png",
+                    description: "Acme Corp saw a 200% increase in efficiency after working with us.",
+                  },
+                  {
+                    name: "Globex Inc.",
+                    logo: "/darblockahin.png",
+                    description: "Globex Inc. loved our fast turnaround and quality results.",
+                  },
+                  {
+                    name: "Globex Inc.",
+                    logo: "/darblockahin.png",
+                    description: "Globex Inc. loved our fast turnaround and quality results.",
+                  },
+                  {
+                    name: "Globex Inc.",
+                    logo: "/darblockahin.png",
+                    description: "Globex Inc. loved our fast turnaround and quality results.",
+                  },
+                  {
+                    name: "Globex Inc.",
+                    logo: "/darblockahin.png",
+                    description: "Globex Inc. loved our fast turnaround and quality results.",
+                  },
+                  {
+                    name: "Globex Inc.",
+                    logo: "/darblockahin.png",
+                    description: "Globex Inc. loved our fast turnaround and quality results.",
+                  },
+                  // Add more clients as needed
+                ].map((client, idx) => (
+                  <div
+                    key={idx}
+                    className="flex flex-col items-center bg-gray-800/80 rounded-xl shadow-lg p-6 min-w-0"
+                  >
+                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-700 mb-3 overflow-hidden">
+                      <img
+                        src={client.logo}
+                        alt={client.name + " logo"}
+                        className="h-12 w-12 object-contain"
+                      />
+                    </div>
+                    <div className="text-base font-bold text-white mb-1 text-center">{client.name}</div>
+                    <div className="text-gray-300 text-center text-xs">{client.description}</div>
                   </div>
-                  <div className="text-lg font-bold text-white mb-1">{client.name}</div>
-                  <div className="text-gray-300 text-center text-sm">{client.description}</div>
-                </div>
-              ))}
+                ))}
+              </div>
             </Carousel>
 
           </div>
