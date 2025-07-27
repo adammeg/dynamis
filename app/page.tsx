@@ -460,7 +460,7 @@ export default function HomePage() {
                 role: "Blockchain Company",
                 content:
                   "DevCraft Solutions transformed our business with an amazing web application. Our sales increased by 150% within 3 months!",
-                logo: "darblockchain.png",
+                logo: "/darblockahin.png",
                 color: "bg-blue-600",
                 delay: "0",
               },
