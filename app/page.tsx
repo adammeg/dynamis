@@ -482,6 +482,33 @@ export default function HomePage() {
                 color: "bg-green-600",
                 delay: "400",
               },
+              {
+                name: "David Wilson",
+                role: "CTO, FinanceFlow",
+                content:
+                  "Professional, reliable, and results-driven. They delivered exactly what we needed on time and within budget.",
+                avatar: "DW",
+                color: "bg-green-600",
+                delay: "400",
+              },
+              {
+                name: "David Wilson",
+                role: "CTO, FinanceFlow",
+                content:
+                  "Professional, reliable, and results-driven. They delivered exactly what we needed on time and within budget.",
+                avatar: "DW",
+                color: "bg-green-600",
+                delay: "400",
+              },
+              {
+                name: "David Wilson",
+                role: "CTO, FinanceFlow",
+                content:
+                  "Professional, reliable, and results-driven. They delivered exactly what we needed on time and within budget.",
+                avatar: "DW",
+                color: "bg-green-600",
+                delay: "400",
+              }
             ].map((testimonial, index) => (
               <Carousel>
                 <Card
