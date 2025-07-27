@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { Carousel } from "@/components/ui/carousel"
 import {
   Code,
   Smartphone,
@@ -88,8 +89,8 @@ function ContactForm() {
           {state && (
             <div
               className={`p-4 rounded-lg animate-fade-in ${state.success
-                  ? "bg-green-900/30 text-green-300 border border-green-700"
-                  : "bg-red-900/30 text-red-300 border border-red-700"
+                ? "bg-green-900/30 text-green-300 border border-green-700"
+                : "bg-red-900/30 text-red-300 border border-red-700"
                 }`}
             >
               {state.message}
@@ -482,31 +483,33 @@ export default function HomePage() {
                 delay: "400",
               },
             ].map((testimonial, index) => (
-              <Card
-                key={index}
-                className={`bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-500 transform hover:scale-105 animate-fade-in-up`}
-                style={{ animationDelay: `${testimonial.delay}ms` }}
-              >
-                <CardContent className="pt-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current animate-pulse" />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 mb-4">{testimonial.content}</p>
-                  <div className="flex items-center">
-                    <div
-                      className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center text-white font-semibold mr-3 animate-pulse`}
-                    >
-                      {testimonial.avatar}
+              <Carousel>
+                <Card
+                  key={index}
+                  className={`bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-500 transform hover:scale-105 animate-fade-in-up`}
+                  style={{ animationDelay: `${testimonial.delay}ms` }}
+                >
+                  <CardContent className="pt-6">
+                    <div className="flex items-center mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-current animate-pulse" />
+                      ))}
                     </div>
-                    <div>
-                      <div className="font-semibold text-white">{testimonial.name}</div>
-                      <div className="text-sm text-gray-400">{testimonial.role}</div>
+                    <p className="text-gray-300 mb-4">{testimonial.content}</p>
+                    <div className="flex items-center">
+                      <div
+                        className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center text-white font-semibold mr-3 animate-pulse`}
+                      >
+                        {testimonial.avatar}
+                      </div>
+                      <div>
+                        <div className="font-semibold text-white">{testimonial.name}</div>
+                        <div className="text-sm text-gray-400">{testimonial.role}</div>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Carousel>
             ))}
           </div>
         </div>
