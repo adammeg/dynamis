@@ -456,59 +456,14 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "John Smith",
-                role: "CEO, TechStart Inc.",
+                name: "Dar Blockchain",
+                role: "Blockchain Company",
                 content:
                   "DevCraft Solutions transformed our business with an amazing web application. Our sales increased by 150% within 3 months!",
-                avatar: "JS",
+                logo: "darblockchain.png",
                 color: "bg-blue-600",
                 delay: "0",
               },
-              {
-                name: "Maria Johnson",
-                role: "Founder, RetailPro",
-                content:
-                  "The mobile app they built for us is incredible. User engagement is up 200% and our customers love the experience.",
-                avatar: "MJ",
-                color: "bg-purple-600",
-                delay: "200",
-              },
-              {
-                name: "David Wilson",
-                role: "CTO, FinanceFlow",
-                content:
-                  "Professional, reliable, and results-driven. They delivered exactly what we needed on time and within budget.",
-                avatar: "DW",
-                color: "bg-green-600",
-                delay: "400",
-              },
-              {
-                name: "David Wilson",
-                role: "CTO, FinanceFlow",
-                content:
-                  "Professional, reliable, and results-driven. They delivered exactly what we needed on time and within budget.",
-                avatar: "DW",
-                color: "bg-green-600",
-                delay: "400",
-              },
-              {
-                name: "David Wilson",
-                role: "CTO, FinanceFlow",
-                content:
-                  "Professional, reliable, and results-driven. They delivered exactly what we needed on time and within budget.",
-                avatar: "DW",
-                color: "bg-green-600",
-                delay: "400",
-              },
-              {
-                name: "David Wilson",
-                role: "CTO, FinanceFlow",
-                content:
-                  "Professional, reliable, and results-driven. They delivered exactly what we needed on time and within budget.",
-                avatar: "DW",
-                color: "bg-green-600",
-                delay: "400",
-              }
             ].map((testimonial, index) => (
               <Carousel>
                 <Card
@@ -527,7 +482,7 @@ export default function HomePage() {
                       <div
                         className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center text-white font-semibold mr-3 animate-pulse`}
                       >
-                        {testimonial.avatar}
+                        {testimonial.logo}
                       </div>
                       <div>
                         <div className="font-semibold text-white">{testimonial.name}</div>
