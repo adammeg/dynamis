@@ -131,39 +131,26 @@ export default function HomePage() {
   // Partners data
   const partnersData = [
     {
-      name: "BINANCE",
-      logo: "/logos/binance.png",
-      description: "Hanna Seidel Stiftung"
+      name: "Dar Blockchian",
+      logo: "/darblockchain.png",
+      description: ""
     },
     {
-      name: "CARDANO",
-      logo: "/logos/cardano.png",
-      description: "Mmpact Partner"
+      name: "Fondative",
+      logo: "/fondative.jpg",
+      description: ""
     },
     {
-      name: "JIFC",
-      logo: "/logos/jifc.png"
+      name: "Fame Guild",
+      logo: "/fameguild.jpg"
     },
     {
-      name: "APT@S",
-      logo: "/logos/aptas.png"
+      name: "Pantheon",
+      logo: "/pantheon.png"
     },
     {
-      name: "CONNECTITY",
-      logo: "/logos/connectity.png"
-    },
-    {
-      name: "HRBEHEN",
-      logo: "/logos/hrbehen.png"
-    },
-    {
-      name: "COUNTRY",
-      logo: "/logos/country.png"
-    },
-    {
-      name: "Cello",
-      logo: "/logos/cello.png",
-      description: "Digitancy"
+      name: "Trustit",
+      logo: "/trusit.jpg"
     },
   ]
 
