@@ -146,7 +146,7 @@ export default function HomePage() {
     },
     {
       name: "Pantheon",
-      logo: "/pantheon.png"
+      logo: "/pantheonmining_logo.jpg"
     },
     {
       name: "Trustit",
