@@ -507,10 +507,19 @@ export default function HomePage() {
                 },
                 // Add more clients as needed
               ].map((client, idx) => (
-                <div key={idx} className="flex flex-col items-center p-6">
-                  <img src={client.logo} alt={client.name} className="h-20 w-20 object-contain mb-4" />
-                  <div className="text-lg font-semibold text-white">{client.name}</div>
-                  <div className="text-gray-300 text-center mt-2">{client.description}</div>
+                <div
+                  key={idx}
+                  className="flex flex-col items-center bg-gray-800/80 rounded-xl shadow-lg p-8 mx-4 min-w-[260px] max-w-xs"
+                >
+                  <div className="flex items-center justify-center h-20 w-20 rounded-full bg-gray-700 mb-4 overflow-hidden">
+                    <img
+                      src={client.logo}
+                      alt={client.name + " logo"}
+                      className="h-16 w-16 object-contain"
+                    />
+                  </div>
+                  <div className="text-lg font-bold text-white mb-1">{client.name}</div>
+                  <div className="text-gray-300 text-center text-sm">{client.description}</div>
                 </div>
               ))}
             </Carousel>
