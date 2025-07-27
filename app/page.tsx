@@ -485,6 +485,26 @@ export default function HomePage() {
                   logo: "/darblockahin.png",
                   description: "Globex Inc. loved our fast turnaround and quality results.",
                 },
+                {
+                  name: "Globex Inc.",
+                  logo: "/darblockahin.png",
+                  description: "Globex Inc. loved our fast turnaround and quality results.",
+                },
+                {
+                  name: "Globex Inc.",
+                  logo: "/darblockahin.png",
+                  description: "Globex Inc. loved our fast turnaround and quality results.",
+                },
+                {
+                  name: "Globex Inc.",
+                  logo: "/darblockahin.png",
+                  description: "Globex Inc. loved our fast turnaround and quality results.",
+                },
+                {
+                  name: "Globex Inc.",
+                  logo: "/darblockahin.png",
+                  description: "Globex Inc. loved our fast turnaround and quality results.",
+                },
                 // Add more clients as needed
               ].map((client, idx) => (
                 <div key={idx} className="flex flex-col items-center p-6">
