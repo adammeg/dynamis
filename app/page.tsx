@@ -460,7 +460,7 @@ export default function HomePage() {
                 role: "Blockchain Company",
                 content:
                   "DevCraft Solutions transformed our business with an amazing web application. Our sales increased by 150% within 3 months!",
-                logo: "/darblockahin.png",
+                image: "/darblockahin.png",
                 color: "bg-blue-600",
                 delay: "0",
               },
@@ -482,7 +482,7 @@ export default function HomePage() {
                       <div
                         className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center text-white font-semibold mr-3 animate-pulse`}
                       >
-                        {testimonial.logo}
+                        {testimonial.image}
                       </div>
                       <div>
                         <div className="font-semibold text-white">{testimonial.name}</div>
