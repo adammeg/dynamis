@@ -29,8 +29,6 @@ import { useState, useEffect } from "react"
 import { submitContactForm } from "./actions/contact"
 
 function ContactForm() {
-  // Fix: useActionState expects a reducer function, not an action.
-  // We'll define a reducer that calls submitContactForm with the form data.
   const [state, action, isPending] = useActionState(
     async (_prevState: { success: boolean; message: string } | null, formData: FormData) => {
       return await submitContactForm(formData);
@@ -129,6 +127,45 @@ export default function HomePage() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  // Partners data
+  const partnersData = [
+    {
+      name: "BINANCE",
+      logo: "/logos/binance.png",
+      description: "Hanna Seidel Stiftung"
+    },
+    {
+      name: "CARDANO",
+      logo: "/logos/cardano.png",
+      description: "Mmpact Partner"
+    },
+    {
+      name: "JIFC",
+      logo: "/logos/jifc.png"
+    },
+    {
+      name: "APT@S",
+      logo: "/logos/aptas.png"
+    },
+    {
+      name: "CONNECTITY",
+      logo: "/logos/connectity.png"
+    },
+    {
+      name: "HRBEHEN",
+      logo: "/logos/hrbehen.png"
+    },
+    {
+      name: "COUNTRY",
+      logo: "/logos/country.png"
+    },
+    {
+      name: "Cello",
+      logo: "/logos/cello.png",
+      description: "Digitancy"
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -454,27 +491,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            {/* Example clients data for carousel */}
-            {/*
-            const clients = [
-              {
-                name: "Acme Corp",
-                logo: "/acme-logo.png",
-                description: "Acme Corp saw a 200% increase in efficiency after working with us.",
-              },
-              {
-                name: "Globex Inc.",
-                logo: "/globex-logo.png",
-                description: "Globex Inc. loved our fast turnaround and quality results.",
-              },
-              // Add more clients as needed
-            ];
-            */}
-
-            {/* Carousel of client logos and testimonials */}
             <Carousel>
-                // Add more clients as needed
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full px-4">
                 {[
                   {
@@ -507,7 +524,6 @@ export default function HomePage() {
                     logo: "/darblockahin.png",
                     description: "Globex Inc. loved our fast turnaround and quality results.",
                   },
-                  // Add more clients as needed
                 ].map((client, idx) => (
                   <div
                     key={idx}
@@ -526,7 +542,43 @@ export default function HomePage() {
                 ))}
               </div>
             </Carousel>
+          </div>
+        </div>
+      </section>
 
+      {/* Partners Section */}
+      <section id="partners" className="py-20 bg-gray-800/30 relative">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center space-y-4 mb-16 animate-fade-in-up">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">OUR PARTNERS</h2>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            {partnersData.map((partner, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center"
+              >
+                <div className="bg-gray-800/80 rounded-xl p-4 w-full h-full flex items-center justify-center hover:bg-gray-800/90 transition-all">
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-16 w-auto object-contain max-w-full"
+                    title={partner.name}
+                  />
+                </div>
+                {partner.name && (
+                  <p className="text-sm text-gray-300 mt-2 text-center">
+                    {partner.name}
+                  </p>
+                )}
+                {partner.description && (
+                  <p className="text-xs text-gray-400 mt-1 text-center">
+                    {partner.description}
+                  </p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
