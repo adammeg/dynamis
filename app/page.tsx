@@ -472,7 +472,7 @@ export default function HomePage() {
       <section id="partners" className="py-20 bg-gray-800/30 relative">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">OUR Clients</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">OUR CLIENTS</h2>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
