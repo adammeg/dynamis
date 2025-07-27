@@ -454,6 +454,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Testimonials data */}
             {[
               {
                 name: "Dar Blockchain",
@@ -464,35 +465,56 @@ export default function HomePage() {
                 color: "bg-blue-600",
                 delay: "0",
               },
-            ].map((testimonial, index) => (
-              <Carousel>
-                <Card
-                  key={index}
-                  className={`bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:border-blue-500/50 transition-all duration-500 transform hover:scale-105 animate-fade-in-up`}
-                  style={{ animationDelay: `${testimonial.delay}ms` }}
-                >
-                  <CardContent className="pt-6">
-                    <div className="flex items-center mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-current animate-pulse" />
-                      ))}
-                    </div>
-                    <p className="text-gray-300 mb-4">{testimonial.content}</p>
-                    <div className="flex items-center">
-                      <div
-                        className={`w-10 h-10 ${testimonial.color} rounded-full flex items-center justify-center text-white font-semibold mr-3 animate-pulse`}
-                      >
-                        {testimonial.image}
-                      </div>
-                      <div>
-                        <div className="font-semibold text-white">{testimonial.name}</div>
-                        <div className="text-sm text-gray-400">{testimonial.role}</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Carousel>
+            ].map((client, idx) => (
+              <div key={idx} className={`rounded-xl p-6 shadow-lg ${client.color} animate-fade-in-up`} style={{ animationDelay: `${client.delay}ms` }}>
+                <img src={client.image} alt={client.name} className="h-16 w-16 rounded-full mx-auto mb-4 object-cover" />
+                <div className="text-xl font-semibold text-white text-center">{client.name}</div>
+                <div className="text-blue-200 text-center mb-2">{client.role}</div>
+                <div className="text-gray-100 text-center italic">"{client.content}"</div>
+              </div>
             ))}
+            // (The following is a fixed and integrated testimonials carousel example)
+
+            {/* Example clients data for carousel */}
+            {/*
+            const clients = [
+              {
+                name: "Acme Corp",
+                logo: "/acme-logo.png",
+                description: "Acme Corp saw a 200% increase in efficiency after working with us.",
+              },
+              {
+                name: "Globex Inc.",
+                logo: "/globex-logo.png",
+                description: "Globex Inc. loved our fast turnaround and quality results.",
+              },
+              // Add more clients as needed
+            ];
+            */}
+
+            {/* Carousel of client logos and testimonials */}
+            <Carousel>
+              {[
+                {
+                  name: "Acme Corp",
+                  logo: "/acme-logo.png",
+                  description: "Acme Corp saw a 200% increase in efficiency after working with us.",
+                },
+                {
+                  name: "Globex Inc.",
+                  logo: "/globex-logo.png",
+                  description: "Globex Inc. loved our fast turnaround and quality results.",
+                },
+                // Add more clients as needed
+              ].map((client, idx) => (
+                <div key={idx} className="flex flex-col items-center p-6">
+                  <img src={client.logo} alt={client.name} className="h-20 w-20 object-contain mb-4" />
+                  <div className="text-lg font-semibold text-white">{client.name}</div>
+                  <div className="text-gray-300 text-center mt-2">{client.description}</div>
+                </div>
+              ))}
+            </Carousel>
+
           </div>
         </div>
       </section>
