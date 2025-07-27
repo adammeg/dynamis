@@ -467,77 +467,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="portfolio" className="py-20 bg-gray-800/30 relative">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-            <Badge className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 border-blue-500/30">
-              Client Success Stories
-            </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">What Our Clients Say</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Carousel>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 w-full px-4">
-                {[
-                  {
-                    name: "Acme Corp",
-                    logo: "/darblockahin.png",
-                    description: "Acme Corp saw a 200% increase in efficiency after working with us.",
-                  },
-                  {
-                    name: "Globex Inc.",
-                    logo: "/darblockahin.png",
-                    description: "Globex Inc. loved our fast turnaround and quality results.",
-                  },
-                  {
-                    name: "Globex Inc.",
-                    logo: "/darblockahin.png",
-                    description: "Globex Inc. loved our fast turnaround and quality results.",
-                  },
-                  {
-                    name: "Globex Inc.",
-                    logo: "/darblockahin.png",
-                    description: "Globex Inc. loved our fast turnaround and quality results.",
-                  },
-                  {
-                    name: "Globex Inc.",
-                    logo: "/darblockahin.png",
-                    description: "Globex Inc. loved our fast turnaround and quality results.",
-                  },
-                  {
-                    name: "Globex Inc.",
-                    logo: "/darblockahin.png",
-                    description: "Globex Inc. loved our fast turnaround and quality results.",
-                  },
-                ].map((client, idx) => (
-                  <div
-                    key={idx}
-                    className="flex flex-col items-center bg-gray-800/80 rounded-xl shadow-lg p-6 min-w-0"
-                  >
-                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-gray-700 mb-3 overflow-hidden">
-                      <img
-                        src={client.logo}
-                        alt={client.name + " logo"}
-                        className="h-12 w-12 object-contain"
-                      />
-                    </div>
-                    <div className="text-base font-bold text-white mb-1 text-center">{client.name}</div>
-                    <div className="text-gray-300 text-center text-xs">{client.description}</div>
-                  </div>
-                ))}
-              </div>
-            </Carousel>
-          </div>
-        </div>
-      </section>
 
       {/* Partners Section */}
       <section id="partners" className="py-20 bg-gray-800/30 relative">
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">OUR PARTNERS</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">OUR Clients</h2>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
