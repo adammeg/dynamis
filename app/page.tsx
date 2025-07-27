@@ -454,26 +454,6 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Testimonials data */}
-            {[
-              {
-                name: "Dar Blockchain",
-                role: "Blockchain Company",
-                content:
-                  "DevCraft Solutions transformed our business with an amazing web application. Our sales increased by 150% within 3 months!",
-                image: "/darblockahin.png",
-                color: "bg-blue-600",
-                delay: "0",
-              },
-            ].map((client, idx) => (
-              <div key={idx} className={`rounded-xl p-6 shadow-lg ${client.color} animate-fade-in-up`} style={{ animationDelay: `${client.delay}ms` }}>
-                <img src={client.image} alt={client.name} className="h-16 w-16 rounded-full mx-auto mb-4 object-cover" />
-                <div className="text-xl font-semibold text-white text-center">{client.name}</div>
-                <div className="text-blue-200 text-center mb-2">{client.role}</div>
-                <div className="text-gray-100 text-center italic">"{client.content}"</div>
-              </div>
-            ))}
-            // (The following is a fixed and integrated testimonials carousel example)
 
             {/* Example clients data for carousel */}
             {/*
@@ -497,12 +477,12 @@ export default function HomePage() {
               {[
                 {
                   name: "Acme Corp",
-                  logo: "/acme-logo.png",
+                  logo: "/darblockahin.png",
                   description: "Acme Corp saw a 200% increase in efficiency after working with us.",
                 },
                 {
                   name: "Globex Inc.",
-                  logo: "/globex-logo.png",
+                  logo: "/darblockahin.png",
                   description: "Globex Inc. loved our fast turnaround and quality results.",
                 },
                 // Add more clients as needed
