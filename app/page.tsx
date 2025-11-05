@@ -163,6 +163,11 @@ export default function HomePage() {
         <div className="absolute top-40 left-40 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
+      {/* Skip link for accessibility */}
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gray-800 text-white px-3 py-2 rounded">
+        Skip to content
+      </a>
+
       {/* Header */}
       <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 sticky top-0 z-50 transition-all duration-300">
         <div className="container mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
@@ -179,7 +184,7 @@ export default function HomePage() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 animate-fade-in">
+          <nav aria-label="Primary" className="hidden md:flex items-center space-x-8 animate-fade-in">
             <Link
               href="#services"
               className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-105"
@@ -203,6 +208,8 @@ export default function HomePage() {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden text-gray-300 hover:text-white transition-colors"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -228,6 +235,7 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
+      <main id="main">
       <section className="py-20 lg:py-32 relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -256,7 +264,7 @@ export default function HomePage() {
                   size="lg"
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
                 >
-                  Start Your Project
+                  <Link href="#contact">Start Your Project</Link>
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
                 <Button
@@ -264,7 +272,7 @@ export default function HomePage() {
                   variant="outline"
                   className="border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-300 transform hover:scale-105 bg-transparent"
                 >
-                  View Our Work
+                  <Link href="#portfolio">View Our Work</Link>
                 </Button>
               </div>
               <div className="flex items-center space-x-8 pt-4">
@@ -286,10 +294,12 @@ export default function HomePage() {
               <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-8 shadow-2xl backdrop-blur-sm border border-gray-700 transform hover:scale-105 transition-all duration-500">
                 <div className="relative overflow-hidden rounded-lg">
                   <Image
-                    src="/webmobile.png?height=400&width=500"
+                    src="/webmobile.png"
                     alt="Web and Mobile Development"
                     width={500}
                     height={400}
+                    priority
+                    sizes="(min-width: 1024px) 500px, 100vw"
                     className="rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
@@ -468,43 +478,6 @@ export default function HomePage() {
       </section>
 
 
-      {/* Partners Section */}
-      <section id="partners" className="py-20 bg-gray-800/30 relative">
-        <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center space-y-4 mb-16 animate-fade-in-up">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">OUR CLIENTS</h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-            {partnersData.map((partner, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center"
-              >
-                <div className="bg-gray-800/80 rounded-xl p-4 w-full h-full flex items-center justify-center hover:bg-gray-800/90 transition-all">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="h-16 w-auto object-contain max-w-full"
-                    title={partner.name}
-                  />
-                </div>
-                {partner.name && (
-                  <p className="text-sm text-gray-300 mt-2 text-center">
-                    {partner.name}
-                  </p>
-                )}
-                {partner.description && (
-                  <p className="text-xs text-gray-400 mt-1 text-center">
-                    {partner.description}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-900 text-white relative">
         <div className="container mx-auto px-4 lg:px-6">
@@ -592,6 +565,7 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+      </main>
     </div>
   )
 }
