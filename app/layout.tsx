@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.dynamissolutions.tn'),
+  metadataBase: new URL('https://www.dynamissolution.tn'),
   title: {
     default: 'Dynamis Solutions',
     template: '%s | Dynamis Solutions'
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://www.dynamissolutions.tn/',
+    url: 'https://www.dynamissolution.tn/',
     siteName: 'Dynamis Solutions',
     title: 'Dynamis Solutions',
     description: 'Building powerful web and mobile applications that drive business growth.',
@@ -56,8 +56,8 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'Dynamis Solutions',
-              url: 'https://www.dynamissolutions.tn/',
-              logo: 'https://www.dynamissolutions.tn/dynamis-logo.png',
+              url: 'https://www.dynamissolution.tn/',
+              logo: 'https://www.dynamissolution.tn/dynamis-logo.png',
               sameAs: [
                 'https://www.linkedin.com/',
                 'https://twitter.com/'

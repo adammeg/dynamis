@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://www.dynamissolutions.tn/sitemap.xml',
+    sitemap: 'https://www.dynamissolution.tn/sitemap.xml',
   }
 }
 
