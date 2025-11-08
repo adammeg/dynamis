@@ -20,6 +20,8 @@ import {
   Target,
   Menu,
   X,
+  ExternalLink,
+  Github,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -154,6 +156,91 @@ export default function HomePage() {
     },
   ]
 
+  // Development Portfolio - Web, Mobile, Blockchain projects
+  const developmentProjects = [
+    {
+      id: 1,
+      title: "Project Title 1",
+      description: "Brief description of the development project and what was accomplished.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Web Development",
+      technologies: ["React", "Next.js", "TypeScript"],
+      liveUrl: "#", // Add your live project URL
+      githubUrl: "#", // Add your GitHub URL if applicable
+      featured: true,
+    },
+    {
+      id: 2,
+      title: "Project Title 2",
+      description: "Brief description of the development project and what was accomplished.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Mobile Development",
+      technologies: ["React Native", "TypeScript"],
+      liveUrl: "#", // Add your live project URL
+      githubUrl: "#", // Add your GitHub URL if applicable
+      featured: true,
+    },
+    {
+      id: 3,
+      title: "Project Title 3",
+      description: "Brief description of the development project and what was accomplished.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Blockchain",
+      technologies: ["Solidity", "Web3", "Ethereum"],
+      liveUrl: "#", // Add your live project URL
+      githubUrl: "#", // Add your GitHub URL if applicable
+      featured: false,
+    },
+    {
+      id: 4,
+      title: "Project Title 4",
+      description: "Brief description of the development project and what was accomplished.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Web Development",
+      technologies: ["Vue.js", "Node.js"],
+      liveUrl: "#", // Add your live project URL
+      githubUrl: "#", // Add your GitHub URL if applicable
+      featured: false,
+    },
+  ]
+
+  // Marketing Portfolio - Marketing, SEO, Social Media projects
+  const marketingProjects = [
+    {
+      id: 1,
+      title: "Marketing Campaign 1",
+      description: "Brief description of the marketing campaign and results achieved.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Digital Marketing",
+      technologies: ["SEO", "Content Strategy", "Social Media"],
+      liveUrl: "#", // Add your case study URL
+      results: "Increased traffic by 150%", // Optional: Add results/metrics
+      featured: true,
+    },
+    {
+      id: 2,
+      title: "Marketing Campaign 2",
+      description: "Brief description of the marketing campaign and results achieved.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "SEO & SEM",
+      technologies: ["SEO", "Google Ads", "Analytics"],
+      liveUrl: "#", // Add your case study URL
+      results: "Improved rankings by 200%", // Optional: Add results/metrics
+      featured: false,
+    },
+    {
+      id: 3,
+      title: "Marketing Campaign 3",
+      description: "Brief description of the marketing campaign and results achieved.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Social Media Marketing",
+      technologies: ["Facebook Ads", "Instagram", "Content Creation"],
+      liveUrl: "#", // Add your case study URL
+      results: "Grew followers by 300%", // Optional: Add results/metrics
+      featured: false,
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Animated Background */}
@@ -245,18 +332,16 @@ export default function HomePage() {
                   🚀 Transform Your Business Digital Presence
                 </Badge>
                 <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
-                  Build Powerful
+                  Leading Marketing Agency & 
                   <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
                     {" "}
-                    Web & Mobile Apps
+                    Web Development Tunisia
                   </span>
                   <br />
-                  That Drive Results
+                  Mobile & Blockchain Solutions
                 </h1>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  We create custom web applications and mobile apps that boost your business growth with robust
-                  marketing strategies. From concept to launch, we deliver solutions that convert visitors into
-                  customers.
+                  Dynamis Solutions is a premier marketing agency and media agency in Tunisia, specializing in web development, mobile development, and blockchain development. We create custom web applications, mobile apps, and digital marketing strategies that drive growth for Tunisian businesses.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -295,7 +380,7 @@ export default function HomePage() {
                 <div className="relative overflow-hidden rounded-lg">
                   <Image
                     src="/webmobile.png"
-                    alt="Web and Mobile Development"
+                    alt="Marketing Agency Tunisia - Web Development and Mobile Development Services in Tunisia"
                     width={500}
                     height={400}
                     priority
@@ -320,10 +405,9 @@ export default function HomePage() {
             <Badge className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 border-blue-500/30">
               Our Services
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">Complete Digital Solutions for Your Business</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">Complete Digital Solutions for Tunisian Businesses</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From web development to mobile apps and marketing strategies, we provide end-to-end solutions that drive
-              growth and engagement.
+              As a leading marketing agency and media agency in Tunisia, we provide comprehensive web development, mobile development, blockchain development, and digital marketing services that drive growth and engagement for businesses across Tunisia.
             </p>
           </div>
 
@@ -331,44 +415,44 @@ export default function HomePage() {
             {[
               {
                 icon: Globe,
-                title: "Web Application Development",
-                description: "Custom web applications built with modern technologies like React, Next.js, and Node.js",
+                title: "Web Development Tunisia",
+                description: "Professional web development services in Tunisia. Custom web applications built with React, Next.js, and Node.js for Tunisian businesses",
                 features: ["Responsive Design", "SEO Optimized", "Fast Performance", "Secure & Scalable"],
                 delay: "0",
               },
               {
                 icon: Smartphone,
-                title: "Mobile App Development",
-                description: "Native and cross-platform mobile applications for iOS and Android",
+                title: "Mobile Development Tunisia",
+                description: "Expert mobile app development in Tunisia. Native and cross-platform mobile applications for iOS and Android",
                 features: ["iOS & Android", "React Native", "App Store Deployment", "Push Notifications"],
                 delay: "200",
               },
               {
                 icon: TrendingUp,
-                title: "Digital Marketing Strategy",
-                description: "Comprehensive marketing strategies to boost your online presence and drive conversions",
+                title: "Marketing Agency Services",
+                description: "Leading marketing agency in Tunisia offering comprehensive digital marketing strategies to boost your online presence and drive conversions",
                 features: ["SEO & SEM", "Social Media Marketing", "Content Strategy", "Analytics & Reporting"],
                 delay: "400",
+              },
+              {
+                icon: Code,
+                title: "Blockchain Development Tunisia",
+                description: "Cutting-edge blockchain development services in Tunisia. Smart contracts, DApps, and blockchain solutions for your business",
+                features: ["Smart Contracts", "DApp Development", "Blockchain Consulting", "DeFi Solutions"],
+                delay: "600",
               },
               {
                 icon: Zap,
                 title: "Performance Optimization",
                 description: "Speed up your applications and improve user experience with our optimization services",
                 features: ["Speed Optimization", "Database Tuning", "CDN Integration", "Monitoring Setup"],
-                delay: "600",
+                delay: "800",
               },
               {
                 icon: Shield,
                 title: "Security & Maintenance",
                 description: "Keep your applications secure and up-to-date with our maintenance services",
                 features: ["Security Audits", "Regular Updates", "Backup Solutions", "24/7 Monitoring"],
-                delay: "800",
-              },
-              {
-                icon: Target,
-                title: "Consultation & Strategy",
-                description: "Strategic guidance to help you make the right technology decisions for your business",
-                features: ["Technology Assessment", "Project Planning", "Architecture Design", "Growth Strategy"],
                 delay: "1000",
               },
             ].map((service, index) => (
@@ -398,6 +482,240 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-20 bg-gray-900 relative">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center space-y-4 mb-16 animate-fade-in-up">
+            <Badge className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 border-blue-500/30">
+              Our Portfolio
+            </Badge>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+              Showcasing Our Best Work
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Explore our portfolio of successful development and marketing projects for businesses across Tunisia.
+            </p>
+          </div>
+
+          {/* Development Projects Section */}
+          <div className="mb-20">
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+                <Code className="h-8 w-8 text-blue-400" />
+                Development Projects
+              </h3>
+              <p className="text-gray-300 max-w-2xl mx-auto">
+                Web development, mobile app development, and blockchain solutions built with cutting-edge technologies.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {developmentProjects.map((project, index) => (
+                <Card
+                  key={project.id}
+                  className={`group bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-500 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10 backdrop-blur-sm overflow-hidden animate-fade-in-up`}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} - ${project.category} project by Dynamis Solutions`}
+                      width={600}
+                      height={400}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {project.featured && (
+                      <Badge className="absolute top-3 right-3 bg-blue-600 text-white">
+                        Featured
+                      </Badge>
+                    )}
+                    <Badge className="absolute top-3 left-3 bg-blue-600/80 text-white">
+                      {project.category}
+                    </Badge>
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-white group-hover:text-blue-400 transition-colors">
+                      {project.title}
+                    </CardTitle>
+                    <CardDescription className="text-gray-300">
+                      {project.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Badge
+                          key={techIndex}
+                          variant="outline"
+                          className="text-xs border-gray-600 text-gray-400"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    <div className="flex gap-3">
+                      {project.liveUrl !== "#" && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          Live Demo
+                        </a>
+                      )}
+                      {project.githubUrl !== "#" && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-gray-400 hover:text-gray-300 transition-colors"
+                        >
+                          <Github className="h-4 w-4" />
+                          Code
+                        </a>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {developmentProjects.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-400 text-lg">
+                  Development projects will be displayed here.
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Marketing Projects Section */}
+          <div>
+            <div className="text-center mb-12 animate-fade-in-up">
+              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+                <TrendingUp className="h-8 w-8 text-purple-400" />
+                Marketing Projects
+              </h3>
+              <p className="text-gray-300 max-w-2xl mx-auto">
+                Successful digital marketing campaigns, SEO strategies, and social media marketing that drive real results for Tunisian businesses.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {marketingProjects.map((project, index) => (
+                <Card
+                  key={project.id}
+                  className={`group bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-500 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10 backdrop-blur-sm overflow-hidden animate-fade-in-up`}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} - ${project.category} campaign by Dynamis Solutions`}
+                      width={600}
+                      height={400}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {project.featured && (
+                      <Badge className="absolute top-3 right-3 bg-purple-600 text-white">
+                        Featured
+                      </Badge>
+                    )}
+                    <Badge className="absolute top-3 left-3 bg-purple-600/80 text-white">
+                      {project.category}
+                    </Badge>
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-white group-hover:text-purple-400 transition-colors">
+                      {project.title}
+                    </CardTitle>
+                    <CardDescription className="text-gray-300">
+                      {project.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <Badge
+                          key={techIndex}
+                          variant="outline"
+                          className="text-xs border-gray-600 text-gray-400"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    {project.results && (
+                      <div className="mb-4 p-3 bg-green-900/20 border border-green-700/30 rounded-lg">
+                        <p className="text-sm text-green-300 font-semibold">
+                          Results: {project.results}
+                        </p>
+                      </div>
+                    )}
+                    <div className="flex gap-3">
+                      {project.liveUrl !== "#" && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-colors"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          View Case Study
+                        </a>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {marketingProjects.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-400 text-lg">
+                  Marketing projects will be displayed here.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Tunisia Location Section */}
+      <section className="py-16 bg-gray-800/30 relative">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="text-center space-y-6 animate-fade-in-up">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white">
+              Serving Businesses Across Tunisia
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              As a leading <strong>marketing agency in Tunisia</strong> and <strong>media agency in Tunis</strong>, we specialize in <strong>web development Tunisia</strong>, <strong>mobile development Tunisia</strong>, and <strong>blockchain development Tunisia</strong>. Whether you're in Tunis, Sfax, Sousse, or anywhere across Tunisia, we deliver world-class digital solutions tailored for the Tunisian market.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <Badge className="bg-blue-600/20 text-blue-300 border-blue-500/30 px-4 py-2">
+                Marketing Agency Tunis
+              </Badge>
+              <Badge className="bg-purple-600/20 text-purple-300 border-purple-500/30 px-4 py-2">
+                Web Development Tunisia
+              </Badge>
+              <Badge className="bg-blue-600/20 text-blue-300 border-blue-500/30 px-4 py-2">
+                Mobile Development Tunisia
+              </Badge>
+              <Badge className="bg-purple-600/20 text-purple-300 border-purple-500/30 px-4 py-2">
+                Blockchain Development Tunisia
+              </Badge>
+              <Badge className="bg-blue-600/20 text-blue-300 border-blue-500/30 px-4 py-2">
+                Media Agency Tunisia
+              </Badge>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us Section */}
       <section className="py-20 bg-gray-900 relative">
         <div className="container mx-auto px-4 lg:px-6">
@@ -405,7 +723,10 @@ export default function HomePage() {
             <Badge className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 border-blue-500/30">
               Why Choose Us
             </Badge>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">Your Success is Our Priority</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">Tunisia's Premier Marketing Agency & Web Development Partner</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto mt-4">
+              As a trusted marketing agency and media agency in Tunisia, we combine expertise in web development, mobile development, and blockchain development to deliver exceptional results for Tunisian businesses.
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -487,9 +808,9 @@ export default function HomePage() {
                 <Badge className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 border-blue-500/30 mb-4">
                   Get In Touch
                 </Badge>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold mb-4">Ready to Transform Your Business in Tunisia?</h2>
                 <p className="text-gray-300 text-lg">
-                  Let's discuss your project and create a solution that drives real results for your business.
+                  Whether you need web development, mobile development, blockchain development, or marketing agency services, we're here to help your Tunisian business grow. Let's discuss your project and create a solution that drives real results.
                 </p>
               </div>
 
@@ -528,13 +849,13 @@ export default function HomePage() {
                   Dynamis Solutions
                 </span>
               </div>
-              <p className="text-gray-400">Building powerful web and mobile applications that drive business growth.</p>
+              <p className="text-gray-400">Leading marketing agency and media agency in Tunisia. Expert web development, mobile development, and blockchain development services for Tunisian businesses. Serving clients across Tunisia with cutting-edge digital solutions.</p>
             </div>
 
             {[
               {
                 title: "Services",
-                links: ["Web Development", "Mobile Apps", "Digital Marketing", "Consulting"],
+                links: ["Web Development Tunisia", "Mobile Development Tunisia", "Blockchain Development Tunisia", "Marketing Agency Tunisia"],
               },
               {
                 title: "Company",
