@@ -130,78 +130,132 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-
-  // Development Portfolio - Web, Mobile, Blockchain projects
-  const developmentProjects = [
+  // Partners data
+  const partnersData = [
     {
-      id: 1,
-      title: "Moutouri.tn",
-      description: "WebApp for Moutouri.tn, a Tunisian motobikes marketplace.",
-      image: "/moutouri_logo.jpg", 
-      category: "Web Development",
-      technologies: ["React", "Next.js", "TypeScript"],
-      liveUrl: "https://moutouri.tn", 
-      githubUrl: "#", 
-      featured: true,
+      name: "Dar Blockchian",
+      logo: "/darblockchain.png",
+      description: ""
     },
     {
-      id: 2,
-      title: "NexusAcademy.academy",
-      description: "Website for NexusAcademy.academy, a Tunisian online learning platform.",
-      image: "/logo-nexus.png", 
-      category: "Web Development",
-      technologies: ["React", "Next.js", "TypeScript"],
-      liveUrl: "https://nexusacademy.academy", 
-      githubUrl: "#", 
-      featured: true,
+      name: "Fondative",
+      logo: "/fondative.jpg",
+      description: ""
     },
     {
-      id: 3,
-      title: "TunGPT",
-      description: "TunGPT is a Tunisian chatbot that uses the OpenAI API to answer questions and help with tasks.",
-      image: "/logo-tun.png", 
-      category: "AI Development",
-      technologies: ["React", "Next.js", "TypeScript"],
-      liveUrl: "https://tunGPT.tn", 
-      githubUrl: "#", 
-      featured: false,
+      name: "Fame Guild",
+      logo: "/fameguild.jpg"
     },
-
+    {
+      name: "Pantheon",
+      logo: "/pantheonmining_logo.jpg"
+    },
+    {
+      name: "Trustit",
+      logo: "/trusit.jpg"
+    },
   ]
 
-  // Marketing Portfolio - Marketing, SEO, Social Media projects
-  const marketingProjects = [
+  // Brand/Client logos data
+  const brandLogos = [
     {
       id: 1,
-      title: "Moutouri.tn",
-      description: "WebApp for Moutouri.tn, a Tunisian motobikes marketplace.",
-      image: "/moutouri_logo.jpg", 
-      category: "Digital Marketing",
-      technologies: ["SEO", "Content Strategy", "Social Media"],
-      liveUrl: "https://moutouri.tn", 
-      results: "Increased traffic by 150%", 
+      name: "Casa Pasta",
+      logo: "/casapasta-logo.jpg",
+      category: "Food & Restaurant"
+    },
+    {
+      id: 2,
+      name: "Nexus",
+      logo: "/logo-nexus.png",
+      category: "Technology"
+    },
+    {
+      id: 3,
+      name: "Tun",
+      logo: "/logo-tun.png",
+      category: "Business"
+    },
+    {
+      id: 4,
+      name: "Moutouri",
+      logo: "/moutouri_logo.jpg",
+      category: "Business"
+    },
+    {
+      id: 5,
+      name: "Pizzarium",
+      logo: "/pizzarium-logo.jpg",
+      category: "Food & Restaurant"
+    },
+  ]
+
+  // Portfolio data - Replace with your actual projects
+  const portfolioItems = [
+    {
+      id: 1,
+      title: "Project Title 1",
+      description: "Brief description of the project and what was accomplished.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Web Development",
+      technologies: ["React", "Next.js", "TypeScript"],
+      liveUrl: "#", // Add your live project URL
+      githubUrl: "#", // Add your GitHub URL if applicable
       featured: true,
     },
     {
       id: 2,
-      title: "Pizzarium",
-      description: "Content Creation for Pizzarium, a Tunisian pizza restaurant.",
-      image: "/pizzarium_logo.jpg", 
-      category: "Content Creation",
-      technologies: ["Content Creation", "Social Media", "Analytics"],
-      liveUrl: "https://www.instagram.com/pizzariumtunisie/", 
-      results: "Improved rankings by 200%", 
-      featured: false,
+      title: "Project Title 2",
+      description: "Brief description of the project and what was accomplished.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Mobile Development",
+      technologies: ["React Native", "TypeScript"],
+      liveUrl: "#", // Add your live project URL
+      githubUrl: "#", // Add your GitHub URL if applicable
+      featured: true,
     },
     {
       id: 3,
-      title: "Casapasta",
-      description: "Content Creation for Casapasta, a Tunisian pasta restaurant.",
-      image: "/casapasta_logo.jpg", 
-      category: "Content Creation",
-      technologies: ["Content Creation", "Social Media", "Analytics"],
-      liveUrl: "https://www.instagram.com/casapastabar/", 
-      results: "Grew followers by 300%", 
+      title: "Project Title 3",
+      description: "Brief description of the project and what was accomplished.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Blockchain",
+      technologies: ["Solidity", "Web3", "Ethereum"],
+      liveUrl: "#", // Add your live project URL
+      githubUrl: "#", // Add your GitHub URL if applicable
+      featured: false,
+    },
+    {
+      id: 4,
+      title: "Project Title 4",
+      description: "Brief description of the project and what was accomplished.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Web Development",
+      technologies: ["Vue.js", "Node.js"],
+      liveUrl: "#", // Add your live project URL
+      githubUrl: "#", // Add your GitHub URL if applicable
+      featured: false,
+    },
+    {
+      id: 5,
+      title: "Project Title 5",
+      description: "Brief description of the project and what was accomplished.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Marketing",
+      technologies: ["SEO", "Content Strategy"],
+      liveUrl: "#", // Add your live project URL
+      githubUrl: "#", // Add your GitHub URL if applicable
+      featured: false,
+    },
+    {
+      id: 6,
+      title: "Project Title 6",
+      description: "Brief description of the project and what was accomplished.",
+      image: "/webmobile.png", // Replace with your project image
+      category: "Mobile Development",
+      technologies: ["Flutter", "Dart"],
+      liveUrl: "#", // Add your live project URL
+      githubUrl: "#", // Add your GitHub URL if applicable
       featured: false,
     },
   ]
@@ -458,44 +512,94 @@ export default function HomePage() {
               Showcasing Our Best Work
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Explore our portfolio of successful development and marketing projects for businesses across Tunisia.
+              Explore our portfolio of successful web development, mobile development, blockchain, and marketing projects for businesses across Tunisia.
             </p>
           </div>
 
-          {/* Development Projects Section */}
-          <div className="mb-20">
-            <div className="text-center mb-12 animate-fade-in-up">
-              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
-                <Code className="h-8 w-8 text-blue-400" />
-                Development Projects
-              </h3>
-              <p className="text-gray-300 max-w-2xl mx-auto">
-                Web development, mobile app development, and blockchain solutions built with cutting-edge technologies.
-              </p>
+          {/* Brand Logos Section */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-white mb-8 text-center">
+              Trusted by Leading Brands in Tunisia
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {brandLogos.map((brand, index) => (
+                <div
+                  key={brand.id}
+                  className="group relative bg-gray-800/50 border border-gray-700 rounded-lg p-6 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 animate-fade-in-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="relative w-full h-24 flex items-center justify-center overflow-hidden">
+                    <Image
+                      src={brand.logo}
+                      alt={`${brand.name} logo - ${brand.category}`}
+                      width={150}
+                      height={100}
+                      className="object-contain max-w-full max-h-full opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                      style={{ 
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        width: 'auto',
+                        height: 'auto'
+                      }}
+                      onError={(e) => {
+                        // Fallback if image fails to load
+                        const target = e.currentTarget;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          const fallback = document.createElement('div');
+                          fallback.className = 'text-gray-500 text-xs text-center';
+                          fallback.textContent = brand.name;
+                          parent.appendChild(fallback);
+                        }
+                      }}
+                    />
+                  </div>
+                  <p className="text-center text-xs text-gray-400 mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {brand.name}
+                  </p>
+                </div>
+              ))}
             </div>
+          </div>
 
+          {/* Projects Portfolio */}
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold text-white mb-8 text-center">
+              Featured Projects
+            </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {developmentProjects.map((project, index) => (
+              {portfolioItems.map((project, index) => (
                 <Card
                   key={project.id}
                   className={`group bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-500 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/10 backdrop-blur-sm overflow-hidden animate-fade-in-up`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} - ${project.category} project by Dynamis Solutions`}
-                      width={600}
-                      height={400}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
+                  <div className="relative overflow-hidden bg-gray-700/30">
+                    <div className="aspect-video w-full relative">
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} - ${project.category} project by Dynamis Solutions`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        onError={(e) => {
+                          // Fallback styling if image fails
+                          e.currentTarget.style.display = 'none';
+                          const parent = e.currentTarget.parentElement;
+                          if (parent) {
+                            parent.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-500">Image not available</div>';
+                          }
+                        }}
+                      />
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     {project.featured && (
-                      <Badge className="absolute top-3 right-3 bg-blue-600 text-white">
+                      <Badge className="absolute top-3 right-3 bg-blue-600 text-white z-10">
                         Featured
                       </Badge>
                     )}
-                    <Badge className="absolute top-3 left-3 bg-blue-600/80 text-white">
+                    <Badge className="absolute top-3 left-3 bg-purple-600/80 text-white z-10">
                       {project.category}
                     </Badge>
                   </div>
@@ -547,106 +651,15 @@ export default function HomePage() {
                 </Card>
               ))}
             </div>
-
-            {developmentProjects.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-gray-400 text-lg">
-                  Development projects will be displayed here.
-                </p>
-              </div>
-            )}
           </div>
 
-          {/* Marketing Projects Section */}
-          <div>
-            <div className="text-center mb-12 animate-fade-in-up">
-              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
-                <TrendingUp className="h-8 w-8 text-purple-400" />
-                Marketing Projects
-              </h3>
-              <p className="text-gray-300 max-w-2xl mx-auto">
-                Successful digital marketing campaigns, SEO strategies, and social media marketing that drive real results for Tunisian businesses.
+          {portfolioItems.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-400 text-lg">
+                Portfolio items will be displayed here. Add your projects to showcase your work.
               </p>
             </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {marketingProjects.map((project, index) => (
-                <Card
-                  key={project.id}
-                  className={`group bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-500 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/10 backdrop-blur-sm overflow-hidden animate-fade-in-up`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} - ${project.category} campaign by Dynamis Solutions`}
-                      width={600}
-                      height={400}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    {project.featured && (
-                      <Badge className="absolute top-3 right-3 bg-purple-600 text-white">
-                        Featured
-                      </Badge>
-                    )}
-                    <Badge className="absolute top-3 left-3 bg-purple-600/80 text-white">
-                      {project.category}
-                    </Badge>
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-white group-hover:text-purple-400 transition-colors">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-gray-300">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech, techIndex) => (
-                        <Badge
-                          key={techIndex}
-                          variant="outline"
-                          className="text-xs border-gray-600 text-gray-400"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    {project.results && (
-                      <div className="mb-4 p-3 bg-green-900/20 border border-green-700/30 rounded-lg">
-                        <p className="text-sm text-green-300 font-semibold">
-                          Results: {project.results}
-                        </p>
-                      </div>
-                    )}
-                    <div className="flex gap-3">
-                      {project.liveUrl !== "#" && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-colors"
-                        >
-                          <ExternalLink className="h-4 w-4" />
-                          View Case Study
-                        </a>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {marketingProjects.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-gray-400 text-lg">
-                  Marketing projects will be displayed here.
-                </p>
-              </div>
-            )}
-          </div>
+          )}
         </div>
       </section>
 
