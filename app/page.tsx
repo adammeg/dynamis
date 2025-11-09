@@ -161,31 +161,31 @@ export default function HomePage() {
     {
       id: 1,
       title: "Casa Pasta",
-      description: "Modern restaurant website with online ordering system and menu management. Built with responsive design for optimal user experience.",
+      description: "Content Creation for Casa Pasta, a Tunisian pasta restaurant.",
       image: "/casapasta-logo.jpg",
-      category: "Web Development",
-      technologies: ["React", "Next.js", "TypeScript"],
-      liveUrl: "#", // Add your live project URL
-      githubUrl: "#", // Add your GitHub URL if applicable
+      category: "Content Creation",
+      technologies: ["Instagram", "Facebook", "Content Creation"],
+      liveUrl: "https://www.instagram.com/casapastabar/", 
+      githubUrl: "#", 
       featured: true,
     },
     {
       id: 2,
       title: "Nexus",
-      description: "Technology platform with advanced features and seamless user interface. Delivered high-performance solution for business operations.",
+      description: "Website for Nexus, a Tunisian online learning platform.",
       image: "/logo-nexus.png",
       category: "Web Development",
       technologies: ["React", "Next.js", "Node.js"],
-      liveUrl: "#", // Add your live project URL
+      liveUrl: "https://nexusacademy.academy", 
       githubUrl: "#", // Add your GitHub URL if applicable
       featured: true,
     },
     {
       id: 3,
       title: "Tun",
-      description: "Business platform solution designed for the Tunisian market. Comprehensive digital transformation with modern technologies.",
+      description: "AI Chatbot for Tunisian businesses.",
       image: "/logo-tun.png",
-      category: "Web Development",
+      category: "AI Development",
       technologies: ["React", "TypeScript", "Tailwind CSS"],
       liveUrl: "#", // Add your live project URL
       githubUrl: "#", // Add your GitHub URL if applicable
@@ -194,23 +194,23 @@ export default function HomePage() {
     {
       id: 4,
       title: "Moutouri",
-      description: "Business website with custom features and professional design. Enhanced online presence and customer engagement.",
+      description: "Motobikes marketplace website for Moutouri.tn, a Tunisian motobikes marketplace.",
       image: "/moutouri_logo.jpg",
       category: "Web Development",
       technologies: ["Next.js", "React", "TypeScript"],
-      liveUrl: "#", // Add your live project URL
+      liveUrl: "https://moutouri.tn", 
       githubUrl: "#", // Add your GitHub URL if applicable
       featured: false,
     },
     {
       id: 5,
       title: "Pizzarium",
-      description: "Restaurant website with online ordering capabilities. Modern design and user-friendly interface for food delivery services.",
+      description: "Content Creation for Pizzarium, a Tunisian pizza restaurant.",
       image: "/pizzarium-logo.jpg",
-      category: "Web Development",
-      technologies: ["React", "Next.js", "TypeScript"],
-      liveUrl: "#", // Add your live project URL
-      githubUrl: "#", // Add your GitHub URL if applicable
+      category: "Content Creation",
+      technologies: ["Instagram", "Facebook", "Content Creation"],
+      liveUrl: "https://www.instagram.com/pizzariumtunisie/", 
+      githubUrl: "#", 
       featured: false,
     },
   ]
