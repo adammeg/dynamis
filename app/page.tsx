@@ -130,113 +130,78 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Partners data
-  const partnersData = [
-    {
-      name: "Dar Blockchian",
-      logo: "/darblockchain.png",
-      description: ""
-    },
-    {
-      name: "Fondative",
-      logo: "/fondative.jpg",
-      description: ""
-    },
-    {
-      name: "Fame Guild",
-      logo: "/fameguild.jpg"
-    },
-    {
-      name: "Pantheon",
-      logo: "/pantheonmining_logo.jpg"
-    },
-    {
-      name: "Trustit",
-      logo: "/trusit.jpg"
-    },
-  ]
 
   // Development Portfolio - Web, Mobile, Blockchain projects
   const developmentProjects = [
     {
       id: 1,
-      title: "Project Title 1",
-      description: "Brief description of the development project and what was accomplished.",
-      image: "/webmobile.png", // Replace with your project image
+      title: "Moutouri.tn",
+      description: "WebApp for Moutouri.tn, a Tunisian motobikes marketplace.",
+      image: "/moutouri_logo.jpg", 
       category: "Web Development",
       technologies: ["React", "Next.js", "TypeScript"],
-      liveUrl: "#", // Add your live project URL
-      githubUrl: "#", // Add your GitHub URL if applicable
+      liveUrl: "https://moutouri.tn", 
+      githubUrl: "#", 
       featured: true,
     },
     {
       id: 2,
-      title: "Project Title 2",
-      description: "Brief description of the development project and what was accomplished.",
-      image: "/webmobile.png", // Replace with your project image
-      category: "Mobile Development",
-      technologies: ["React Native", "TypeScript"],
-      liveUrl: "#", // Add your live project URL
-      githubUrl: "#", // Add your GitHub URL if applicable
+      title: "NexusAcademy.academy",
+      description: "Website for NexusAcademy.academy, a Tunisian online learning platform.",
+      image: "/logo-nexus.png", 
+      category: "Web Development",
+      technologies: ["React", "Next.js", "TypeScript"],
+      liveUrl: "https://nexusacademy.academy", 
+      githubUrl: "#", 
       featured: true,
     },
     {
       id: 3,
-      title: "Project Title 3",
-      description: "Brief description of the development project and what was accomplished.",
-      image: "/webmobile.png", // Replace with your project image
-      category: "Blockchain",
-      technologies: ["Solidity", "Web3", "Ethereum"],
-      liveUrl: "#", // Add your live project URL
-      githubUrl: "#", // Add your GitHub URL if applicable
+      title: "TunGPT",
+      description: "TunGPT is a Tunisian chatbot that uses the OpenAI API to answer questions and help with tasks.",
+      image: "/logo-tun.png", 
+      category: "AI Development",
+      technologies: ["React", "Next.js", "TypeScript"],
+      liveUrl: "https://tunGPT.tn", 
+      githubUrl: "#", 
       featured: false,
     },
-    {
-      id: 4,
-      title: "Project Title 4",
-      description: "Brief description of the development project and what was accomplished.",
-      image: "/webmobile.png", // Replace with your project image
-      category: "Web Development",
-      technologies: ["Vue.js", "Node.js"],
-      liveUrl: "#", // Add your live project URL
-      githubUrl: "#", // Add your GitHub URL if applicable
-      featured: false,
-    },
+
   ]
 
   // Marketing Portfolio - Marketing, SEO, Social Media projects
   const marketingProjects = [
     {
       id: 1,
-      title: "Marketing Campaign 1",
-      description: "Brief description of the marketing campaign and results achieved.",
-      image: "/webmobile.png", // Replace with your project image
+      title: "Moutouri.tn",
+      description: "WebApp for Moutouri.tn, a Tunisian motobikes marketplace.",
+      image: "/moutouri_logo.jpg", 
       category: "Digital Marketing",
       technologies: ["SEO", "Content Strategy", "Social Media"],
-      liveUrl: "#", // Add your case study URL
-      results: "Increased traffic by 150%", // Optional: Add results/metrics
+      liveUrl: "https://moutouri.tn", 
+      results: "Increased traffic by 150%", 
       featured: true,
     },
     {
       id: 2,
-      title: "Marketing Campaign 2",
-      description: "Brief description of the marketing campaign and results achieved.",
-      image: "/webmobile.png", // Replace with your project image
-      category: "SEO & SEM",
-      technologies: ["SEO", "Google Ads", "Analytics"],
-      liveUrl: "#", // Add your case study URL
-      results: "Improved rankings by 200%", // Optional: Add results/metrics
+      title: "Pizzarium",
+      description: "Content Creation for Pizzarium, a Tunisian pizza restaurant.",
+      image: "/pizzarium_logo.jpg", 
+      category: "Content Creation",
+      technologies: ["Content Creation", "Social Media", "Analytics"],
+      liveUrl: "https://www.instagram.com/pizzariumtunisie/", 
+      results: "Improved rankings by 200%", 
       featured: false,
     },
     {
       id: 3,
-      title: "Marketing Campaign 3",
-      description: "Brief description of the marketing campaign and results achieved.",
-      image: "/webmobile.png", // Replace with your project image
-      category: "Social Media Marketing",
-      technologies: ["Facebook Ads", "Instagram", "Content Creation"],
-      liveUrl: "#", // Add your case study URL
-      results: "Grew followers by 300%", // Optional: Add results/metrics
+      title: "Casapasta",
+      description: "Content Creation for Casapasta, a Tunisian pasta restaurant.",
+      image: "/casapasta_logo.jpg", 
+      category: "Content Creation",
+      technologies: ["Content Creation", "Social Media", "Analytics"],
+      liveUrl: "https://www.instagram.com/casapastabar/", 
+      results: "Grew followers by 300%", 
       featured: false,
     },
   ]
