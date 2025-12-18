@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import modern fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Manrope:wght@400;600;700;800&display=swap');
-
 @layer base {
   :root {
     /* font stacks used by Tailwind config */
