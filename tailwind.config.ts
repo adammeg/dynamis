@@ -1,18 +1,38 @@
 import type { Config } from "tailwindcss";
 
-// all in fixtures is set to tailwind v3 as interims solutions
-
 const config: Config = {
     darkMode: ["class"],
     content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./content/**/*.{md,mdx}",
     "*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+  			display: ['var(--font-manrope)', 'Manrope', 'Inter', 'system-ui', 'sans-serif'],
+  			mono: ['var(--font-mono)', 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'monospace'],
+  		},
   		colors: {
+  			// Design system colors
+  			dark: {
+  				background: '#0A0A0A',
+  				surface: '#111111',
+  				'elevated': '#1A1A1A',
+  				border: '#262626',
+  				'text-primary': '#FFFFFF',
+  				'text-secondary': '#A3A3A3',
+  				'text-tertiary': '#737373',
+  			},
+  			accent: {
+  				blue: '#3B82F6',
+  				purple: '#8B5CF6',
+  				hover: '#2563EB',
+  			},
+  			// Legacy colors for compatibility
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -63,6 +83,22 @@ const config: Config = {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			}
+  		},
+  		spacing: {
+  			// 8px baseline grid system
+  			'0': '0',
+  			'1': '8px',
+  			'2': '16px',
+  			'3': '24px',
+  			'4': '32px',
+  			'5': '40px',
+  			'6': '48px',
+  			'7': '56px',
+  			'8': '64px',
+  			'9': '72px',
+  			'10': '80px',
+  			'12': '96px',
+  			'16': '128px',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

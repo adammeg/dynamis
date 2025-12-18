@@ -37,31 +37,61 @@ function ContactForm() {
     },
     null
   );
+const navItems = [
+  { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Blog", href: "/blog" },
+]
+ const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [active, setActive] = useState("")
 
+  /* Shrink + blur on scroll */
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  /* Scroll spy */
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]")
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id)
+        })
+      },
+      { rootMargin: "-40% 0px -50% 0px" }
+    )
+
+    sections.forEach(section => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
   return (
-    <Card className="bg-gray-800/50 border-gray-700 backdrop-blur-sm text-white animate-fade-in-up">
-      <CardHeader>
-        <CardTitle className="text-white">Start Your Project Today</CardTitle>
-        <CardDescription className="text-gray-300">
-          Fill out the form below and we'll get back to you within 24 hours.
+    <Card className="bg-gradient-to-br from-gray-800/80 to-gray-900/60 border-gray-700/50 backdrop-blur-xl text-white animate-fade-in-up shadow-card-lg hover-lift">
+      <CardHeader className="space-y-2">
+        <CardTitle className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Start Your Project Today</CardTitle>
+        <CardDescription className="text-gray-400">
+          Share your vision with us. We'll respond within 24 hours with a personalized plan.
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <form action={action} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+        <form action={action} className="space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Input
               name="firstName"
               placeholder="First Name"
               required
               disabled={isPending}
-              className="bg-gray-700/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-blue-500 transition-all duration-300"
+              className="bg-gray-700/50 border-gray-600/50 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all duration-300 rounded-lg"
             />
             <Input
               name="lastName"
               placeholder="Last Name"
               required
               disabled={isPending}
-              className="bg-gray-700/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-blue-500 transition-all duration-300"
+              className="bg-gray-700/50 border-gray-600/50 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all duration-300 rounded-lg"
             />
           </div>
           <Input
@@ -70,47 +100,48 @@ function ContactForm() {
             type="email"
             required
             disabled={isPending}
-            className="bg-gray-700/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-blue-500 transition-all duration-300"
+            className="bg-gray-700/50 border-gray-600/50 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all duration-300 rounded-lg"
           />
           <Input
             name="company"
-            placeholder="Company Name"
+            placeholder="Company Name (optional)"
             disabled={isPending}
-            className="bg-gray-700/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-blue-500 transition-all duration-300"
+            className="bg-gray-700/50 border-gray-600/50 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all duration-300 rounded-lg"
           />
           <Textarea
             name="message"
-            placeholder="Tell us about your project..."
-            className="min-h-[100px] bg-gray-700/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-blue-500 transition-all duration-300"
+            placeholder="Tell us about your project... What are your goals and requirements?"
+            className="min-h-[120px] bg-gray-700/50 border-gray-600/50 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30 transition-all duration-300 rounded-lg resize-none"
             required
             disabled={isPending}
           />
 
           {state && (
             <div
-              className={`p-4 rounded-lg animate-fade-in ${state.success
-                ? "bg-green-900/30 text-green-300 border border-green-700"
-                : "bg-red-900/30 text-red-300 border border-red-700"
+              className={`p-4 rounded-lg animate-scale-in ${state.success
+                ? "bg-green-900/30 text-green-300 border border-green-700/50 flex items-center gap-2"
+                : "bg-red-900/30 text-red-300 border border-red-700/50 flex items-center gap-2"
                 }`}
             >
+              {state.success ? <CheckCircle className="h-5 w-5 flex-shrink-0" /> : <></>}
               {state.message}
             </div>
           )}
 
           <Button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 rounded-lg transition-smooth shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed group"
             disabled={isPending}
           >
             {isPending ? (
               <>
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
                 Sending...
               </>
             ) : (
               <>
                 Send Message
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </>
             )}
           </Button>
@@ -121,6 +152,12 @@ function ContactForm() {
 }
 
 export default function HomePage() {
+  const navItems = [
+  { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Blog", href: "/blog" },
+]
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
 
@@ -129,7 +166,31 @@ export default function HomePage() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+  const [scrolled, setScrolled] = useState(false)
+  const [active, setActive] = useState("")
 
+  /* Shrink + blur on scroll */
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  /* Scroll spy */
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]")
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id)
+        })
+      },
+      { rootMargin: "-40% 0px -50% 0px" }
+    )
+
+    sections.forEach(section => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
   // Partners data
   const partnersData = [
     {
@@ -217,105 +278,130 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Animated Background */}
+      {/* Animated Background - Professional Gradient Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-40 left-40 w-80 h-80 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-indigo-500 to-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-br from-purple-400 to-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
       </div>
 
       {/* Skip link for accessibility */}
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-gray-800 text-white px-3 py-2 rounded">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold">
         Skip to content
       </a>
 
       {/* Header */}
-      <header className="border-b border-gray-800 bg-gray-900/95 backdrop-blur supports-[backdrop-filter]:bg-gray-900/60 sticky top-0 z-50 transition-all duration-300">
-        <div className="container mx-auto px-4 lg:px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center space-x-2 animate-fade-in-left">
-            <div className="relative">
-              <Code className="h-8 w-8 text-blue-400 animate-pulse" />
-              <div className="absolute inset-0 h-8 w-8 text-blue-400 animate-ping opacity-20">
-                <Code className="h-8 w-8" />
-              </div>
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Dynamis Solutions
-            </span>
-          </div>
+<header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300
+      ${scrolled
+        ? "bg-gray-900/80 backdrop-blur-xl border-b border-white/10"
+        : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div
+          className={`flex items-center justify-between transition-all duration-300
+          ${scrolled ? "h-14" : "h-16"}`}
+        >
 
-          {/* Desktop Navigation */}
-          <nav aria-label="Primary" className="hidden md:flex items-center space-x-8 animate-fade-in">
-            <Link
-              href="#services"
-              className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-105"
-            >
-              Services
-            </Link>
-            <Link
-              href="#portfolio"
-              className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-105"
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="#contact"
-              className="text-gray-300 hover:text-blue-400 transition-all duration-300 hover:scale-105"
-            >
-              Contact
-            </Link>
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 shadow-md transition group-hover:scale-105">
+              <Code className="h-5 w-5 text-white" />
+            </div>
+            <div className="leading-tight">
+              <span className="block text-lg font-semibold text-white">
+                Dynamis
+              </span>
+              <span className="block text-[11px] uppercase tracking-widest text-gray-400">
+                Solutions
+              </span>
+            </div>
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navItems.map(item => {
+              const isActive = active === item.href.replace("#", "")
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`relative text-sm font-medium transition
+                  ${isActive ? "text-white" : "text-gray-300 hover:text-white"}`}
+                >
+                  {item.label}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-blue-500 to-indigo-500 transition-all
+                    ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+                  />
+                </Link>
+              )
+            })}
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-gray-300 hover:text-white transition-colors"
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isMenuOpen}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Actions */}
+          <div className="flex items-center gap-3">
+            <Link href="#contact" className="hidden sm:block">
+              <Button className="h-10 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-5 text-sm font-semibold text-white shadow-md transition hover:from-blue-700 hover:to-indigo-700">
+                Get Started
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+
+            {/* Mobile */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden rounded-lg p-2 text-gray-300 transition hover:bg-white/10 hover:text-white focus:ring-2 focus:ring-blue-500"
+            >
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-gray-800 border-t border-gray-700 animate-slide-down">
-            <div className="px-4 py-4 space-y-4">
-              <Link href="#services" className="block text-gray-300 hover:text-blue-400 transition-colors">
-                Services
+          <div className="lg:hidden mt-4 rounded-xl border border-white/10 bg-gray-900/95 backdrop-blur-xl shadow-xl">
+            {[
+              ...navItems,
+              { label: "Contact", href: "#contact" },
+            ].map(item => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="block rounded-lg px-4 py-3 text-sm font-medium text-gray-300 transition hover:bg-white/5 hover:text-white"
+              >
+                {item.label}
               </Link>
-              <Link href="#portfolio" className="block text-gray-300 hover:text-blue-400 transition-colors">
-                Portfolio
-              </Link>
-              <Link href="#contact" className="block text-gray-300 hover:text-blue-400 transition-colors">
-                Contact
-              </Link>
-            </div>
+            ))}
           </div>
         )}
-      </header>
+      </div>
+    </header>
+
 
       {/* Hero Section */}
       <main id="main">
-      <section className="py-20 lg:py-32 relative overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-24 lg:py-40 relative overflow-hidden">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="space-y-8 animate-fade-in-up">
-              <div className="space-y-4">
-                <Badge className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 border-blue-500/30 hover:bg-gradient-to-r hover:from-blue-600/30 hover:to-purple-600/30 transition-all duration-300 animate-bounce-slow">
-                  🚀 Transform Your Business Digital Presence
+              <div className="space-y-6">
+                <Badge className="inline-block bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 border-blue-500/30 hover:bg-gradient-to-r hover:from-blue-600/30 hover:to-purple-600/30 transition-all duration-300 px-4 py-2">
+                  🚀 Digital Transformation in Tunisia
                 </Badge>
-                <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
-                  Leading Marketing Agency & 
-                  <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
-                    {" "}
-                    Web Development Tunisia
+                <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+                  Leading 
+                  <span className="block">
+                    Marketing & Web
                   </span>
-                  <br />
-                  Mobile & Blockchain Solutions
+                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent font-black">
+                    Development Agency
+                  </span>
                 </h1>
-                <p className="text-xl text-gray-300 leading-relaxed">
-                  Dynamis Solutions is a premier marketing agency and media agency in Tunisia, specializing in web development, mobile development, and blockchain development. We create custom web applications, mobile apps, and digital marketing strategies that drive growth for Tunisian businesses.
+                <p className="text-lg lg:text-xl text-gray-400 leading-relaxed max-w-xl">
+                  We craft cutting-edge digital solutions for Tunisian businesses. From responsive websites to AI-powered applications, we transform your vision into reality.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -487,6 +573,9 @@ export default function HomePage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       quality={90}
+                      loading={index < 3 ? "eager" : "lazy"}
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
@@ -722,7 +811,7 @@ export default function HomePage() {
                   Dynamis Solutions
                 </span>
               </div>
-              <p className="text-gray-400">Leading marketing agency and media agency in Tunisia. Expert web development, mobile development, and blockchain development services for Tunisian businesses. Serving clients across Tunisia with cutting-edge digital solutions.</p>
+              <p className="text-gray-400">Dynamis Solutions est une agence digitale Tunisie — agence marketing digital Tunisie, agence web Tunisie et agence communication digitale. Nous réalisons la création site web (vitrine & e-commerce), développement web sur mesure, référencement naturel (SEO) et gestion réseaux sociaux pour entreprises et startups en Tunisie.</p>
             </div>
 
             {[

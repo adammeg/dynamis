@@ -8,10 +8,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/`,
       lastModified: now,
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 1,
     },
-    // Hash links are not included in sitemap by design
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/future-of-web-development-tunisia`,
+      lastModified: new Date('2025-01-15'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/mobile-app-development-best-practices`,
+      lastModified: new Date('2025-01-10'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/blockchain-solutions-tunisia`,
+      lastModified: new Date('2025-01-05'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
   ]
 }
 

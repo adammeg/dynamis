@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { GoogleAnalytics } from '@/components/analytics'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.dynamissolution.tn'),
@@ -7,29 +8,61 @@ export const metadata: Metadata = {
     default: 'Dynamis Solutions - Marketing Agency & Web Development Tunisia | Media Agency Tunis',
     template: '%s | Dynamis Solutions'
   },
-  description: 'Leading marketing agency and media agency in Tunisia. Expert web development, mobile development, and blockchain development services. Digital marketing agency Tunis specializing in custom web applications, mobile apps, and digital marketing strategies for Tunisian businesses.',
+  description: "Dynamis Solutions — agence digitale Tunisie spécialisée en création site web, marketing digital et solutions web3. Nous accompagnons les entreprises tunisiennes avec des services professionnels : création de site vitrine et e-commerce, développement web sur mesure, SEO et stratégie marketing digitale.",
   keywords: [
-    'marketing agency Tunisia',
-    'media agency Tunisia',
-    'marketing agency Tunis',
-    'media agency Tunis',
-    'web development Tunisia',
-    'mobile development Tunisia',
-    'blockchain development Tunisia',
+    'agence digitale Tunisie',
+    'agence marketing digital Tunisie',
+    'agence web Tunisie',
+    'agence communication digitale',
+    'agence marketing 360',
+    'agence digitale professionnelle',
+    'agence digitale pour entreprises',
+    'agence web & marketing Tunisie',
+    'agence digitale Tunis',
+    'agence marketing Tunis',
+    'agence web Tunis',
+    'création site web Tunisie',
+    'développement site web professionnel',
+    'création site vitrine',
+    'création site e-commerce',
+    'agence développement web Tunisie',
+    'site web sur mesure',
+    'développement web moderne',
+    'refonte site web',
+    'web design UI UX',
+    'site web responsive',
+    'référencement naturel Tunisie',
+    'agence SEO Tunisie',
+    'optimisation SEO site web',
+    'audit SEO professionnel',
+    'stratégie SEO',
+    'référencement Google Tunisie',
+    'SEO pour entreprises',
+    'amélioration visibilité Google',
+    'marketing digital Tunisie',
+    'gestion réseaux sociaux',
+    'community management Tunisie',
+    'stratégie marketing digitale',
+    'publicité digitale',
+    'marketing de contenu',
+    'branding digital',
+    'marketing pour startups',
+    'marketing pour PME',
+    'agence web3',
+    'marketing blockchain',
+    'promotion projets web3',
+    'communication blockchain',
+    'stratégie marketing web3',
+    'identité visuelle',
+    'branding professionnel',
+    'design graphique Tunisie',
+    'création logo professionnel',
+    'charte graphique',
     'digital marketing agency Tunisia',
-    'web development Tunis',
-    'mobile app development Tunisia',
-    'blockchain solutions Tunisia',
-    'digital agency Tunisia',
+    'web development agency Tunisia',
     'SEO agency Tunisia',
-    'social media marketing Tunisia',
-    'web design Tunisia',
-    'mobile app development Tunis',
-    'blockchain development Tunis',
-    'custom web development Tunisia',
-    'React development Tunisia',
-    'Next.js development Tunisia',
-    'mobile app agency Tunisia'
+    'web3 marketing agency',
+    'creative digital agency'
   ],
   icons: "/dynamis-logo.png",
   alternates: {
@@ -40,7 +73,7 @@ export const metadata: Metadata = {
     url: 'https://www.dynamissolution.tn/',
     siteName: 'Dynamis Solutions',
     title: 'Dynamis Solutions - Marketing Agency & Web Development Tunisia',
-    description: 'Leading marketing agency and media agency in Tunisia. Expert web development, mobile development, and blockchain development services for Tunisian businesses.',
+    description: "Dynamis Solutions — agence digitale Tunisie spécialisée en création de site web, marketing digital, SEO et solutions web3 pour entreprises tunisiennes.",
     locale: 'fr_TN',
     images: [
       {
@@ -54,7 +87,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Dynamis Solutions - Marketing Agency & Web Development Tunisia',
-    description: 'Leading marketing agency and media agency in Tunisia. Expert web development, mobile development, and blockchain development services.',
+    description: "Dynamis Solutions — agence digitale Tunisie spécialisée en création site web, développement sur mesure, SEO et marketing digital pour entreprises tunisiennes.",
     images: ['/dynamis-logo.png']
   },
   robots: {
@@ -72,12 +105,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="BFT7sOLB_7cvXTwCc5hPbi29Mtk-zdscHoY0bRwv2oA" />
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'LocalBusiness',
+              '@type': 'Organization',
               '@id': 'https://www.dynamissolution.tn/#organization',
               name: 'Dynamis Solutions',
               alternateName: 'Dynamis Solutions - Marketing Agency Tunisia',
@@ -93,49 +127,6 @@ export default function RootLayout({
               },
               telephone: '+21690053729',
               email: 'contact@dynamis.com',
-              priceRange: '$$',
-              areaServed: {
-                '@type': 'Country',
-                name: 'Tunisia'
-              },
-              hasOfferCatalog: {
-                '@type': 'OfferCatalog',
-                name: 'Digital Services',
-                itemListElement: [
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Marketing Agency Services',
-                      description: 'Digital marketing, SEO, social media marketing for Tunisian businesses'
-                    }
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Web Development',
-                      description: 'Custom web development and web application development in Tunisia'
-                    }
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Mobile Development',
-                      description: 'Mobile app development for iOS and Android in Tunisia'
-                    }
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Blockchain Development',
-                      description: 'Blockchain solutions and blockchain development services in Tunisia'
-                    }
-                  }
-                ]
-              },
               sameAs: [
                 'https://www.linkedin.com/',
                 'https://twitter.com/'
@@ -151,8 +142,36 @@ export default function RootLayout({
             })
           }}
         />
+        {/* WebSite Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              '@id': 'https://www.dynamissolution.tn/#website',
+              url: 'https://www.dynamissolution.tn/',
+              name: 'Dynamis Solutions',
+              description: "Dynamis Solutions — agence digitale Tunisie spécialisée en création site web, développement sur mesure, SEO et marketing digital pour entreprises tunisiennes.",
+              publisher: {
+                '@id': 'https://www.dynamissolution.tn/#organization'
+              },
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://www.dynamissolution.tn/search?q={search_term_string}'
+                },
+                'query-input': 'required name=search_term_string'
+              }
+            })
+          }}
+        />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <GoogleAnalytics />
+      </body>
     </html>
   )
 }
