@@ -10,80 +10,52 @@ const config: Config = {
     "*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-  	extend: {
-  		fontFamily: {
+	extend: {
+		fontFamily: {
   			sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
   			display: ['var(--font-manrope)', 'Manrope', 'Inter', 'system-ui', 'sans-serif'],
   			mono: ['var(--font-mono)', 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'monospace'],
   		},
-  		colors: {
-  			// Design system colors
-  			dark: {
-  				background: '#0A0A0A',
-  				surface: '#111111',
-  				'elevated': '#1A1A1A',
-  				border: '#262626',
-  				'text-primary': '#FFFFFF',
-  				'text-secondary': '#A3A3A3',
-  				'text-tertiary': '#737373',
-  			},
-  			accent: {
-  				blue: '#3B82F6',
-  				purple: '#8B5CF6',
-  				hover: '#2563EB',
-  			},
-  			// Legacy colors for compatibility
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
-  			},
-  			popover: {
-  				DEFAULT: 'hsl(var(--popover))',
-  				foreground: 'hsl(var(--popover-foreground))'
-  			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
-  			muted: {
-  				DEFAULT: 'hsl(var(--muted))',
-  				foreground: 'hsl(var(--muted-foreground))'
-  			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
-  			},
-  			destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
-  			},
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
-  			chart: {
-  				'1': 'hsl(var(--chart-1))',
-  				'2': 'hsl(var(--chart-2))',
-  				'3': 'hsl(var(--chart-3))',
-  				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
-  			},
-  			sidebar: {
-  				DEFAULT: 'hsl(var(--sidebar-background))',
-  				foreground: 'hsl(var(--sidebar-foreground))',
-  				primary: 'hsl(var(--sidebar-primary))',
-  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-  				accent: 'hsl(var(--sidebar-accent))',
-  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-  				border: 'hsl(var(--sidebar-border))',
-  				ring: 'hsl(var(--sidebar-ring))'
-  			}
-  		},
+		// Consolidated, predictable color system for the startup theme
+		colors: {
+			// Base semantic tokens — prefer using CSS vars in `globals.css` for theme swapping
+			background: 'hsl(var(--background))',
+			foreground: 'hsl(var(--foreground))',
+			surface: 'hsl(var(--card))',
+			'surface-foreground': 'hsl(var(--card-foreground))',
+			border: 'hsl(var(--border))',
+
+			// Primary (blue -> indigo) used for CTAs and highlights
+			primary: {
+				DEFAULT: '#3B82F6',
+				600: '#2563EB',
+				500: '#3B82F6',
+				400: '#60A5FA'
+			},
+
+			// Accent gradient endpoints for utility classes
+			accent: {
+				blue: '#3B82F6',
+				indigo: '#6366F1'
+			},
+
+			// Neutral text palette
+			neutral: {
+				100: '#F3F4F6',
+				300: '#D1D5DB',
+				500: '#6B7280',
+				700: '#374151'
+			},
+
+			// Chart and misc tokens still driven by CSS vars
+			chart: {
+				'1': 'hsl(var(--chart-1))',
+				'2': 'hsl(var(--chart-2))',
+				'3': 'hsl(var(--chart-3))',
+				'4': 'hsl(var(--chart-4))',
+				'5': 'hsl(var(--chart-5))'
+			}
+		},
   		spacing: {
   			// 8px baseline grid system
   			'0': '0',

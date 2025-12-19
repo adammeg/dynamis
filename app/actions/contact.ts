@@ -55,7 +55,7 @@ export async function submitContactForm(formData: FormData) {
     const notificationResult = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: ["adambhedj13@gmail.com"],
-      subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+      subject: `New Dynamis Client ${firstName} ${lastName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #2563eb; border-bottom: 2px solid #2563eb; padding-bottom: 10px;">

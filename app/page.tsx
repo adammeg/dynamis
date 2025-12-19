@@ -291,18 +291,9 @@ export default function HomePage() {
       </a>
 
       {/* Header */}
-<header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300
-      ${scrolled
-        ? "bg-gray-900/80 backdrop-blur-xl border-b border-white/10"
-        : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div
-          className={`flex items-center justify-between transition-all duration-300
-          ${scrolled ? "h-14" : "h-16"}`}
-        >
+<header className="fixed inset-x-0 top-0 z-50 h-16">
+      <div className={`mx-auto max-w-7xl px-4 lg:px-8 transition-colors duration-300 ${scrolled ? 'bg-gray-900/78 backdrop-blur-sm border-b border-white/10' : 'bg-transparent'}`}>
+        <div className={`flex items-center justify-between h-16 transition-transform duration-300 ${scrolled ? 'scale-95' : 'scale-100'}`}>
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
@@ -322,18 +313,17 @@ export default function HomePage() {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map(item => {
-              const isActive = active === item.href.replace("#", "")
+              const isActive = active === item.href.replace('#', '')
               return (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`relative text-sm font-medium transition
-                  ${isActive ? "text-white" : "text-gray-300 hover:text-white"}`}
+                  className={`group relative text-sm font-medium transition-colors ${isActive ? 'text-white' : 'text-gray-300 hover:text-white'}`}
                 >
                   {item.label}
                   <span
-                    className={`absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-blue-500 to-indigo-500 transition-all
-                    ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+                    aria-hidden
+                    className={`absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-200 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}
                   />
                 </Link>
               )
@@ -352,20 +342,21 @@ export default function HomePage() {
             {/* Mobile */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-label="Toggle menu"
               className="lg:hidden rounded-lg p-2 text-gray-300 transition hover:bg-white/10 hover:text-white focus:ring-2 focus:ring-blue-500"
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden mt-4 rounded-xl border border-white/10 bg-gray-900/95 backdrop-blur-xl shadow-xl">
-            {[
-              ...navItems,
-              { label: "Contact", href: "#contact" },
-            ].map(item => (
+      {/* Mobile Menu Overlay (slides down) */}
+      {isMenuOpen && (
+        <div className="lg:hidden fixed inset-x-4 top-16 z-40 rounded-xl border border-white/10 bg-gray-900/95 backdrop-blur-sm shadow-xl transform origin-top animate-slide-down">
+          <div className="p-3">
+            {[...navItems, { label: 'Contact', href: '#contact' }].map(item => (
               <Link
                 key={item.label}
                 href={item.href}
@@ -376,8 +367,8 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </header>
 
 
@@ -811,7 +802,7 @@ export default function HomePage() {
                   Dynamis Solutions
                 </span>
               </div>
-              <p className="text-gray-400">Dynamis Solutions est une agence digitale Tunisie — agence marketing digital Tunisie, agence web Tunisie et agence communication digitale. Nous réalisons la création site web (vitrine & e-commerce), développement web sur mesure, référencement naturel (SEO) et gestion réseaux sociaux pour entreprises et startups en Tunisie.</p>
+              <p className="text-gray-400">Dynamis Solutions est une agence digitale Tunisie agence marketing digital Tunisie, agence web Tunisie et agence communication digitale. Nous réalisons la création site web (vitrine & e-commerce), développement web sur mesure, référencement naturel (SEO) et gestion réseaux sociaux pour entreprises et startups en Tunisie.</p>
             </div>
 
             {[

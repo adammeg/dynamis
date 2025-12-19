@@ -35,7 +35,8 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Neutral dark gray background for better contrast (not pure black) */
+    --background: 220 12% 8%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -330,10 +331,10 @@ html {
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.18);
   }
   50% {
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
+    box-shadow: 0 0 16px rgba(99, 102, 241, 0.22);
   }
 }
 
@@ -395,7 +396,7 @@ html {
 }
 
 .animate-glow {
-  animation: glow 2s ease-in-out infinite;
+  animation: glow 2.5s ease-in-out infinite;
 }
 
 .animate-float-smooth {
