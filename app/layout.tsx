@@ -62,9 +62,23 @@ export const metadata: Metadata = {
     'web development agency Tunisia',
     'SEO agency Tunisia',
     'web3 marketing agency',
-    'creative digital agency'
+    'creative digital agency',
+    'boite de communication digitale',
+    'agence media Tunisia',
+    'agence publicité digitale',
+    'agence création site web',
+    'agence développement application mobile',
+    'agence référencement naturel',
+    'agence gestion réseaux sociaux',
+    'agence solutions blockchain',
+    'agence digitale pour entreprises tunisiennes',
+    'meilleure agence digitale Tunisie',
+    'top agence digitale Tunisia',
+    'agence event digitale Tunisie',
+    'agence influenceurs Tunisie',
+    
   ],
-  icons: "/dynamis-logo.png",
+  icons: "/webmobile.png",
   alternates: {
     canonical: '/'
   },
@@ -73,11 +87,11 @@ export const metadata: Metadata = {
     url: 'https://www.dynamissolution.tn/',
     siteName: 'Dynamis Solutions',
     title: 'Dynamis Solutions - Marketing Agency & Web Development Tunisia',
-    description: "Dynamis Solutions — agence digitale Tunisie spécialisée en création de site web, marketing digital, SEO et solutions web3 pour entreprises tunisiennes.",
+    description: "Dynamis Solutions agence digitale Tunisie spécialisée en création de site web, marketing digital, SEO et solutions web3 pour entreprises tunisiennes.",
     locale: 'fr_TN',
     images: [
       {
-        url: '/dynamis-logo.png',
+        url: '/webmobile.png',
         width: 1200,
         height: 1200,
         alt: 'Dynamis Solutions - Marketing Agency Tunisia'
@@ -88,7 +102,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dynamis Solutions - Marketing Agency & Web Development Tunisia',
     description: "Dynamis Solutions — agence digitale Tunisie spécialisée en création site web, développement sur mesure, SEO et marketing digital pour entreprises tunisiennes.",
-    images: ['/dynamis-logo.png']
+    images: ['/webmobile.png']
   },
   robots: {
     index: true,
@@ -120,8 +134,8 @@ export default function RootLayout({
               name: 'Dynamis Solutions',
               alternateName: 'Dynamis Solutions - Marketing Agency Tunisia',
               url: 'https://www.dynamissolution.tn/',
-              logo: 'https://www.dynamissolution.tn/dynamis-logo.png',
-              image: 'https://www.dynamissolution.tn/dynamis-logo.png',
+              logo: 'https://www.dynamissolution.tn/webmobile.png',
+              image: 'https://www.dynamissolution.tn/webmobile.png',
               description: 'Leading marketing agency and media agency in Tunisia. Expert web development, mobile development, and blockchain development services for Tunisian businesses.',
               address: {
                 '@type': 'PostalAddress',
@@ -156,7 +170,7 @@ export default function RootLayout({
               '@id': 'https://www.dynamissolution.tn/#website',
               url: 'https://www.dynamissolution.tn/',
               name: 'Dynamis Solutions',
-              description: "Dynamis Solutions — agence digitale Tunisie spécialisée en création site web, développement sur mesure, SEO et marketing digital pour entreprises tunisiennes.",
+              description: "Dynamis Solutions agence digitale Tunisie spécialisée en création site web, développement sur mesure, SEO et marketing digital pour entreprises tunisiennes.",
               publisher: {
                 '@id': 'https://www.dynamissolution.tn/#organization'
               },

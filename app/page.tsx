@@ -331,6 +331,7 @@ export default function HomePage() {
           </nav>
 
           {/* Actions */}
+          <br />
           <div className="flex items-center gap-3">
             <Link href="#contact" className="hidden sm:block">
               <Button className="h-10 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-5 text-sm font-semibold text-white shadow-md transition hover:from-blue-700 hover:to-indigo-700">
@@ -373,6 +374,8 @@ export default function HomePage() {
 
 
       {/* Hero Section */}
+      <br />
+      <br />
       <main id="main">
       <section className="py-24 lg:py-40 relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
