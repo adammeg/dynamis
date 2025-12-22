@@ -19,12 +19,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${post.title} | Dynamis Solutions Blog`,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
       authors: [post.author],
+      url: `https://www.dynamissolution.tn/blog/${post.slug}`,
       images: [
         {
           url: `https://www.dynamissolution.tn${post.image || '/dynamis-logo.png'}`,
@@ -45,8 +49,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug)
   if (!post) notFound()
-  const imagePath = post.image ? (post.image.startsWith('http') ? post.image : post.image) : '/webmobile.png'
+  const imagePath = post.image ? (post.image.startsWith('http') ? post.image : post.image) : '/webmobile.webp'
   const imageFull = imagePath.startsWith('http') ? imagePath : `https://www.dynamissolution.tn${imagePath}`
+  const imageAlt = post.title
+    ? `${post.title} – blog article by Dynamis Solutions`
+    : 'Dynamis Solutions blog article illustration'
   const author = post.author || 'Dynamis Solutions Team'
   const readTime = post.readTime || '5 min read'
 
@@ -86,7 +93,14 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </header>
 
           <div className="relative aspect-video w-full mb-12 rounded-lg overflow-hidden">
-            <Image src={imagePath} alt={post.title || 'Article image'} fill sizes="100vw" className="object-cover" priority />
+            <Image
+              src={imagePath}
+              alt={imageAlt}
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
           </div>
 
           <div

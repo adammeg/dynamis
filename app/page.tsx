@@ -29,6 +29,7 @@ import { useState, useEffect } from "react"
 
 // Import the action
 import { submitContactForm } from "./actions/contact"
+import { language } from "gray-matter"
 
 function ContactForm() {
   const [state, action, isPending] = useActionState(
@@ -155,6 +156,7 @@ export default function HomePage() {
   const navItems = [
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#portfolio" },
+  {label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
 ]
 
@@ -195,25 +197,25 @@ export default function HomePage() {
   const partnersData = [
     {
       name: "Dar Blockchian",
-      logo: "/darblockchain.png",
+      logo: "/darblockchain.webp",
       description: ""
     },
     {
       name: "Fondative",
-      logo: "/fondative.jpg",
+      logo: "/fondative.webp",
       description: ""
     },
     {
       name: "Fame Guild",
-      logo: "/fameguild.jpg"
+      logo: "/fameguild.webp"
     },
     {
       name: "Pantheon",
-      logo: "/pantheonmining_logo.jpg"
+      logo: "/pantheonmining_logo.webp"
     },
     {
       name: "Trustit",
-      logo: "/trusit.jpg"
+      logo: "/trusit.webp"
     },
   ]
 
@@ -223,9 +225,10 @@ export default function HomePage() {
       id: 1,
       title: "Casa Pasta",
       description: "Content Creation for Casa Pasta, a Tunisian pasta restaurant.",
-      image: "/casapasta-logo.jpg",
+      image: "/casapasta-logo.webp",
       category: "Content Creation",
       technologies: ["Instagram", "Facebook", "Content Creation"],
+      impact: "Grew brand visibility and engagement for a fast-growing Tunisian restaurant.",
       liveUrl: "https://www.instagram.com/casapastabar/", 
       githubUrl: "#", 
       featured: true,
@@ -237,6 +240,7 @@ export default function HomePage() {
       image: "/logo-nexus.png",
       category: "Web Development",
       technologies: ["React", "Next.js", "Node.js"],
+      impact: "Improved course sign-ups with a high-converting, fast web experience.",
       liveUrl: "https://nexusacademy.academy", 
       githubUrl: "#", // Add your GitHub URL if applicable
       featured: true,
@@ -248,6 +252,7 @@ export default function HomePage() {
       image: "/logo-tun.png",
       category: "AI Development",
       technologies: ["React", "TypeScript", "Tailwind CSS"],
+      impact: "Enabled Tunisian businesses to provide 24/7 automated support.",
       liveUrl: "#", // Add your live project URL
       githubUrl: "#", // Add your GitHub URL if applicable
       featured: true,
@@ -256,9 +261,10 @@ export default function HomePage() {
       id: 4,
       title: "Moutouri",
       description: "Motobikes marketplace website for Moutouri.tn, a Tunisian motobikes marketplace.",
-      image: "/moutouri_logo.jpg",
+      image: "/moutouri_logo.webp",
       category: "Web Development",
       technologies: ["Next.js", "React", "TypeScript"],
+      impact: "Delivered a modern, mobile-friendly marketplace for motorbike buyers.",
       liveUrl: "https://moutouri.tn", 
       githubUrl: "#", // Add your GitHub URL if applicable
       featured: false,
@@ -267,12 +273,25 @@ export default function HomePage() {
       id: 5,
       title: "Pizzarium",
       description: "Content Creation for Pizzarium, a Tunisian pizza restaurant.",
-      image: "/pizzarium-logo.jpg",
+      image: "/pizzarium-logo.webp",
       category: "Content Creation",
       technologies: ["Instagram", "Facebook", "Content Creation"],
+      impact: "Boosted online orders with consistent, high-quality content.",
       liveUrl: "https://www.instagram.com/pizzariumtunisie/", 
       githubUrl: "#", 
       featured: false,
+    },
+    {
+      id: 6,
+      title: "MFAI",
+      description: "web3 development for MFAI, a web3 development company.",
+      image: "/mfai.webp",
+      category: "Web3 Development",
+      technologies: [ "Next.js", "Node.js", "solana"],
+      impact: "Delivered a modern, platform web3 platform for MFAI.",
+      liveUrl: "https://www.mfai.app/", 
+      githubUrl: "#", // Add your GitHub URL if applicable
+      featured: true,
     },
   ]
 
@@ -433,8 +452,8 @@ export default function HomePage() {
               <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-8 shadow-2xl backdrop-blur-sm border border-gray-700 transform hover:scale-105 transition-all duration-500">
                 <div className="relative overflow-hidden rounded-lg">
                   <Image
-                    src="/webmobile.png"
-                    alt="Marketing Agency Tunisia - Web Development and Mobile Development Services in Tunisia"
+                    src="/webmobile.webp"
+                    alt="Dynamis Solutions - Marketing and web development agency in Tunisia"
                     width={500}
                     height={400}
                     priority
@@ -536,108 +555,150 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-gray-900 relative">
+      {/* Portfolio Section - Horizontal Right-to-Left Scrolling */}
+      <section id="portfolio" className="py-24 bg-gray-900 relative">
         <div className="container mx-auto px-4 lg:px-6">
-          <div className="text-center space-y-4 mb-16 animate-fade-in-up">
+          {/* Soft gradient shell behind the carousel */}
+          <div className="absolute inset-x-0 -z-10 h-[420px] -top-10 opacity-40">
+            <div className="mx-auto h-full max-w-6xl rounded-3xl bg-gradient-to-r from-blue-900/40 via-purple-900/30 to-gray-900/20 blur-3xl" />
+          </div>
+          <div className="text-center space-y-3 mb-10 animate-fade-in-up">
             <Badge className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 text-blue-300 border-blue-500/30">
               Our Portfolio
             </Badge>
             <h2 className="text-3xl lg:text-4xl font-bold text-white">
-              Showcasing Our Best Work
+              Results for Tunisian Brands & Startups
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Explore our portfolio of successful web development, mobile development, blockchain, and marketing projects for businesses across Tunisia.
+              Explore real projects where we combined strategy, design, and technology to create measurable business results.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioItems.map((project, index) => (
-              <Card
-                key={project.id}
-                className="group bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20 overflow-hidden animate-fade-in-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="relative overflow-hidden bg-gray-800">
-                  <div className="aspect-[16/10] w-full relative">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} - ${project.category} project by Dynamis Solutions`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      quality={90}
-                      loading={index < 3 ? "eager" : "lazy"}
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
-                  {project.featured && (
-                    <Badge className="absolute top-4 right-4 bg-blue-600 text-white shadow-lg">
-                      Featured
-                    </Badge>
-                  )}
-                  <Badge className="absolute top-4 left-4 bg-purple-600/90 text-white backdrop-blur-sm">
-                    {project.category}
-                  </Badge>
-                </div>
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl text-white group-hover:text-blue-400 transition-colors">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-gray-400 leading-relaxed">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge
-                        key={techIndex}
-                        variant="outline"
-                        className="text-xs border-gray-600 text-gray-400 bg-gray-800/50"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="flex gap-4 pt-2 border-t border-gray-700">
-                    {project.liveUrl !== "#" && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        View Project
-                      </a>
-                    )}
-                    {project.githubUrl !== "#" && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-gray-300 transition-colors"
-                      >
-                        <Github className="h-4 w-4" />
-                        Source Code
-                      </a>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {portfolioItems.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-400 text-lg">
-                Portfolio items will be displayed here. Add your projects to showcase your work.
-              </p>
+          <div className="relative mt-4 rounded-3xl bg-gray-900/70 border border-white/5 shadow-[0_0_60px_rgba(15,23,42,0.9)] px-3 sm:px-5 py-6">
+            {/* Scroll hint */}
+            <div className="flex items-center justify-between mb-4 text-xs text-gray-400">
+              <span className="uppercase tracking-[0.2em] text-[10px] text-gray-500">
+                Selected case studies
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="hidden sm:inline">Scroll horizontally to discover our projects</span>
+                <span className="inline-flex h-6 w-10 items-center justify-center rounded-full border border-gray-700 bg-gray-800/60 text-[10px] text-gray-300">
+                  ← →
+                </span>
+              </span>
             </div>
-          )}
+
+            <div className="group/scroll relative">
+              {/* Gradient fade edges for a polished carousel look */}
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-gray-900 via-gray-900/60 to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-gray-900 via-gray-900/60 to-transparent" />
+              <div
+                dir="rtl"
+                className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900/60"
+              >
+                {portfolioItems.map((project, index) => (
+                  <Card
+                    key={project.id}
+                    className={`relative min-w-[280px] sm:min-w-[320px] ${
+                      project.featured ? 'lg:min-w-[420px]' : 'lg:min-w-[360px]'
+                    } max-w-xs overflow-hidden snap-start rounded-2xl border border-gray-700/70 bg-gradient-to-br from-gray-900/90 via-gray-900/80 to-slate-900/90 shadow-xl shadow-black/40 transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/80 hover:shadow-[0_25px_70px_rgba(37,99,235,0.45)]`}
+                    style={{ animationDelay: `${index * 90}ms` }}
+                  >
+                    <div className="relative overflow-hidden bg-gray-800">
+                      <div className="aspect-[16/10] w-full relative">
+                        <Image
+                          src={project.image}
+                      alt={`${project.title} – ${project.category} project by Dynamis Solutions`}
+                          fill
+                          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 40vw, 360px"
+                          className="object-cover transition-transform duration-700 group-hover/scroll:scale-110 group-hover/scroll:rotate-[-1deg]"
+                          quality={90}
+                          loading={index < 3 ? "eager" : "lazy"}
+                          placeholder="blur"
+                          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60" />
+                      {project.featured && (
+                        <Badge className="absolute top-4 right-4 bg-blue-600 text-white shadow-lg">
+                          Featured
+                        </Badge>
+                      )}
+                      <Badge className="absolute top-4 left-4 bg-purple-600/90 text-white backdrop-blur-sm">
+                        {project.category}
+                      </Badge>
+                    </div>
+                    <CardHeader className="pb-3">
+                      <div className="mb-1 flex items-center justify-between text-[11px] uppercase tracking-[0.16em] text-gray-500">
+                        <span>{project.category}</span>
+                        {project.featured && (
+                          <span className="rounded-full bg-blue-600/20 px-2 py-0.5 text-[10px] font-semibold text-blue-300">
+                            Featured case
+                          </span>
+                        )}
+                      </div>
+                      <CardTitle className="text-xl text-white">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="mt-1 text-sm text-gray-400 leading-relaxed">
+                        {project.description}
+                      </CardDescription>
+                      {project.impact && (
+                        <p className="mt-3 text-sm text-blue-300 font-medium">
+                          Result: <span className="text-blue-200">{project.impact}</span>
+                        </p>
+                      )}
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.map((tech, techIndex) => (
+                          <Badge
+                            key={techIndex}
+                            variant="outline"
+                            className="text-xs border-gray-600 text-gray-400 bg-gray-800/50"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                      <div className="flex gap-4 pt-2 border-t border-gray-700">
+                        {project.liveUrl !== "#" && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+                          >
+                            <ExternalLink className="h-4 w-4" />
+                            View Project
+                          </a>
+                        )}
+                        {project.githubUrl !== "#" && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-gray-300 transition-colors"
+                          >
+                            <Github className="h-4 w-4" />
+                            Source Code
+                          </a>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {portfolioItems.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-400 text-lg">
+                  Portfolio items will be displayed here. Add your projects to showcase your work.
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       </section>
 

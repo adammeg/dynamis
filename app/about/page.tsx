@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'À propos - Dynamis Solutions',
-  description: 'Dynamis Solutions — agence digitale Tunisie spécialisée en création site web, marketing digital, SEO et solutions web3 pour entreprises tunisiennes.'
+  title: 'À propos Dynamis Solutions',
+  description: 'Dynamis Solutions agence digitale Tunisie spécialisée en création site web, marketing digital, SEO et solutions web3 pour entreprises tunisiennes.'
 }
 
 export default function AboutPage() {
@@ -16,12 +16,12 @@ export default function AboutPage() {
           </p>
 
           <ul className="list-disc list-inside text-gray-300 space-y-2">
-            <li>Création site web Tunisie — sites vitrines et sites e-commerce</li>
+            <li>Création site web Tunisie sites vitrines et sites e-commerce</li>
             <li>Développement site web professionnel sur mesure</li>
             <li>Référencement naturel Tunisie (agence SEO Tunisie) et optimisation SEO site web</li>
-            <li>Marketing digital Tunisie — gestion réseaux sociaux et stratégie marketing digitale</li>
-            <li>Solutions web3 et blockchain — agence web3, marketing blockchain et web3 consulting</li>
-            <li>Design & branding — identité visuelle, création logo professionnel et charte graphique</li>
+            <li>Marketing digital Tunisie gestion réseaux sociaux et stratégie marketing digitale</li>
+            <li>Solutions web3 et blockchain agence web3, marketing blockchain et web3 consulting</li>
+            <li>Design & branding identité visuelle, création logo professionnel et charte graphique</li>
           </ul>
 
           <p className="text-gray-300">

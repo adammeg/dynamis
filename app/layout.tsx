@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     'agence influenceurs Tunisie',
     
   ],
-  icons: "/webmobile.png",
+  icons: "/webmobile.webp",
   alternates: {
     canonical: '/'
   },
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     locale: 'fr_TN',
     images: [
       {
-        url: '/webmobile.png',
+        url: '/webmobile.webp',
         width: 1200,
         height: 1200,
         alt: 'Dynamis Solutions - Marketing Agency Tunisia'
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dynamis Solutions - Marketing Agency & Web Development Tunisia',
     description: "Dynamis Solutions — agence digitale Tunisie spécialisée en création site web, développement sur mesure, SEO et marketing digital pour entreprises tunisiennes.",
-    images: ['/webmobile.png']
+    images: ['/webmobile.webp']
   },
   robots: {
     index: true,
@@ -134,8 +134,8 @@ export default function RootLayout({
               name: 'Dynamis Solutions',
               alternateName: 'Dynamis Solutions - Marketing Agency Tunisia',
               url: 'https://www.dynamissolution.tn/',
-              logo: 'https://www.dynamissolution.tn/webmobile.png',
-              image: 'https://www.dynamissolution.tn/webmobile.png',
+              logo: 'https://www.dynamissolution.tn/webmobile.webp',
+              image: 'https://www.dynamissolution.tn/webmobile.webp',
               description: 'Leading marketing agency and media agency in Tunisia. Expert web development, mobile development, and blockchain development services for Tunisian businesses.',
               address: {
                 '@type': 'PostalAddress',

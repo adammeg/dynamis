@@ -5,7 +5,11 @@ export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') return res.status(405).end()
 
   const { title, slug, excerpt, category = 'Web Development', content, password } = req.body
-  const secret = process.env.ADMIN_PASSWORD || 'changeme'
+  // Use the same env var as the admin UI (`NEXT_PUBLIC_ADMIN_PASSWORD`) so that
+  // the password check is consistent between client and API.
+  // NOTE: For a production setup, you should move to a true server-only secret
+  // and a proper auth system, but this keeps the current lightweight flow working.
+  const secret = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || process.env.ADMIN_PASSWORD || 'changeme'
   if (!password || password !== secret) {
     return res.status(401).json({ error: 'Unauthorized' })
   }
@@ -17,7 +21,7 @@ export default async function handler(req: any, res: any) {
 
   const filePath = path.join(dir, `${slug}.mdx`)
   const today = new Date().toISOString().split('T')[0]
-  const md = `---\ntitle: "${title}"\nexcerpt: "${excerpt || ''}"\ndate: "${today}"\ncategory: "${category}"\nimage: "/webmobile.png"\nreadTime: "5 min read"\nauthor: "Dynamis Solutions Team"\nslug: "${slug}"\n---\n\n${content}`
+  const md = `---\ntitle: "${title}"\nexcerpt: "${excerpt || ''}"\ndate: "${today}"\ncategory: "${category}"\nimage: "/webmobile.webp"\nreadTime: "5 min read"\nauthor: "Dynamis Solutions Team"\nslug: "${slug}"\n---\n\n${content}`
 
   try {
     fs.writeFileSync(filePath, md, 'utf8')
