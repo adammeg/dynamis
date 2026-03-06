@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import type { ReactNode } from "react";
 import { GoogleAnalytics } from "@/components/analytics";
-import { Inter, Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({
+const bodyFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700", "800"],
   variable: "--font-inter",
   display: "swap",
 });
 
-const manrope = Manrope({
+const displayFont = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
   variable: "--font-manrope",
   display: "swap",
 });
@@ -20,187 +19,114 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dynamissolution.tn"),
   title: {
-    default:
-      "Dynamis Solutions - Marketing Agency & Web Development Tunisia | Media Agency Tunis",
-    template: "%s | Dynamis Solutions",
+    default: "Dynamis Solution | Premium Digital Transformation Agency",
+    template: "%s | Dynamis Solution",
   },
   description:
-    "Dynamis Solutions — agence digitale Tunisie spécialisée en création site web, marketing digital et solutions web3. Nous accompagnons les entreprises tunisiennes avec des services professionnels : création de site vitrine et e-commerce, développement web sur mesure, SEO et stratégie marketing digitale.",
+    "Dynamis Solution is a premium digital transformation agency delivering websites, SaaS products, automation systems, branding, growth strategy, and consulting for ambitious companies.",
   keywords: [
-    "agence digitale Tunisie",
-    "agence marketing digital Tunisie",
-    "agence web Tunisie",
-    "agence communication digitale",
-    "agence marketing 360",
-    "agence digitale professionnelle",
-    "agence digitale pour entreprises",
-    "agence web & marketing Tunisie",
-    "agence digitale Tunis",
-    "agence marketing Tunis",
-    "agence web Tunis",
-    "création site web Tunisie",
-    "développement site web professionnel",
-    "création site vitrine",
-    "création site e-commerce",
-    "agence développement web Tunisie",
-    "site web sur mesure",
-    "développement web moderne",
-    "refonte site web",
-    "web design UI UX",
-    "site web responsive",
-    "référencement naturel Tunisie",
-    "agence SEO Tunisie",
-    "optimisation SEO site web",
-    "audit SEO professionnel",
-    "stratégie SEO",
-    "référencement Google Tunisie",
-    "SEO pour entreprises",
-    "amélioration visibilité Google",
-    "marketing digital Tunisie",
-    "gestion réseaux sociaux",
-    "community management Tunisie",
-    "stratégie marketing digitale",
-    "publicité digitale",
-    "marketing de contenu",
-    "branding digital",
-    "marketing pour startups",
-    "marketing pour PME",
-    "agence web3",
-    "marketing blockchain",
-    "promotion projets web3",
-    "communication blockchain",
-    "stratégie marketing web3",
-    "identité visuelle",
-    "branding professionnel",
-    "design graphique Tunisie",
-    "création logo professionnel",
-    "charte graphique",
-    "digital marketing agency Tunisia",
+    "digital transformation agency Tunisia",
     "web development agency Tunisia",
-    "SEO agency Tunisia",
-    "web3 marketing agency",
-    "creative digital agency",
-    "boite de communication digitale",
-    "agence media Tunisia",
-    "agence publicité digitale",
-    "agence création site web",
-    "agence développement application mobile",
-    "agence référencement naturel",
-    "agence gestion réseaux sociaux",
-    "agence solutions blockchain",
-    "agence digitale pour entreprises tunisiennes",
-    "meilleure agence digitale Tunisie",
-    "top agence digitale Tunisia",
-    "agence event digitale Tunisie",
-    "agence influenceurs Tunisie",
+    "automation agency Tunisia",
+    "AI workflows Tunisia",
+    "SaaS development agency",
+    "branding agency Tunisia",
+    "social media management Tunisia",
+    "marketing growth agency Tunisia",
+    "business consulting Tunisia",
+    "premium web design Tunisia",
   ],
+  category: "technology",
   icons: {
     icon: "/webmobile.webp",
     apple: "/webmobile.webp",
   },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     url: "https://www.dynamissolution.tn/",
-    siteName: "Dynamis Solutions",
-    title: "Dynamis Solutions - Marketing Agency & Web Development Tunisia",
+    siteName: "Dynamis Solution",
+    title: "Dynamis Solution | Premium Digital Transformation Agency",
     description:
-      "Dynamis Solutions agence digitale Tunisie spécialisée en création de site web, marketing digital, SEO et solutions web3 pour entreprises tunisiennes.",
-    locale: "fr_TN",
+      "Premium websites, SaaS products, automation systems, growth infrastructure, and brand experiences built to attract high-value clients.",
+    locale: "en_US",
     images: [
       {
-        url: "/webmobile.webp",
+        url: "/webmobile1.webp",
         width: 1200,
-        height: 1200,
-        alt: "Dynamis Solutions - Marketing Agency Tunisia",
+        height: 630,
+        alt: "Dynamis Solution premium agency site preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dynamis Solutions - Marketing Agency & Web Development Tunisia",
+    title: "Dynamis Solution | Premium Digital Transformation Agency",
     description:
-      "Dynamis Solutions — agence digitale Tunisie spécialisée en création site web, développement sur mesure, SEO et marketing digital pour entreprises tunisiennes.",
-    images: ["/webmobile.webp"],
+      "Web, product, automation, branding, and growth systems for ambitious companies.",
+    images: ["/webmobile1.webp"],
   },
-
-  // ✅ Make indexing explicit for ALL bots (including Googlebot)
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.dynamissolution.tn/#organization",
+  name: "Dynamis Solution",
+  alternateName: "Dynamis Solutions",
+  url: "https://www.dynamissolution.tn/",
+  logo: "https://www.dynamissolution.tn/webmobile.webp",
+  image: "https://www.dynamissolution.tn/webmobile1.webp",
+  description:
+    "Premium digital transformation agency delivering websites, SaaS products, AI workflows, branding, marketing systems, and consulting.",
+  email: "contact@dynamissolution.tn",
+  telephone: "+21690053729",
+  areaServed: ["TN", "FR", "EU"],
+  sameAs: [
+    "https://www.linkedin.com/",
+    "https://www.instagram.com/",
+    "https://www.facebook.com/",
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: "contact@dynamissolution.tn",
+      telephone: "+21690053729",
+      areaServed: "TN",
+      availableLanguage: ["English", "French", "Arabic"],
+    },
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.dynamissolution.tn/#website",
+  url: "https://www.dynamissolution.tn/",
+  name: "Dynamis Solution",
+  description:
+    "Premium digital transformation agency website for automation, web development, SaaS, branding, and growth services.",
+  publisher: { "@id": "https://www.dynamissolution.tn/#organization" },
+};
+
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://www.dynamissolution.tn/#organization",
-    name: "Dynamis Solutions",
-    alternateName: "Dynamis Solutions - Marketing Agency Tunisia",
-    url: "https://www.dynamissolution.tn/",
-    logo: "https://www.dynamissolution.tn/webmobile.webp",
-    image: "https://www.dynamissolution.tn/webmobile.webp",
-    description:
-      "Leading marketing agency and media agency in Tunisia. Expert web development, mobile development, and blockchain development services for Tunisian businesses.",
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "TN",
-      addressRegion: "Tunis",
-      addressLocality: "Tunis",
-    },
-    telephone: "+21690053729",
-    email: "contact@dynamis.com",
-    sameAs: ["https://www.linkedin.com/", "https://twitter.com/"],
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        contactType: "customer support",
-        email: "contact@dynamis.com",
-        telephone: "+21690053729",
-        areaServed: "TN",
-        availableLanguage: ["French", "English", "Arabic"],
-      },
-    ],
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://www.dynamissolution.tn/#website",
-    url: "https://www.dynamissolution.tn/",
-    name: "Dynamis Solutions",
-    description:
-      "Dynamis Solutions agence digitale Tunisie spécialisée en création site web, développement sur mesure, SEO et marketing digital pour entreprises tunisiennes.",
-    publisher: { "@id": "https://www.dynamissolution.tn/#organization" },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://www.dynamissolution.tn/search?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
-  };
-
+}: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="fr" className={`${inter.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${bodyFont.variable} ${displayFont.variable}`}>
       <head>
-        {/* Site verification */}
-        <meta
-          name="google-site-verification"
-          content="BFT7sOLB_7cvXTwCc5hPbi29Mtk-zdscHoY0bRwv2oA"
-        />
-
-        {/* Structured data (JSON-LD) */}
+        <meta name="google-site-verification" content="BFT7sOLB_7cvXTwCc5hPbi29Mtk-zdscHoY0bRwv2oA" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -210,8 +136,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-
-      <body className="antialiased">
+      <body className="bg-background font-sans text-foreground antialiased">
         {children}
         <GoogleAnalytics />
       </body>
