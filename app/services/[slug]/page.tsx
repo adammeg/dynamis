@@ -103,9 +103,10 @@ export default async function ServicePage({ params }: Props) {
             ))}
             <section>
               <h2>
-                {french
-                  ? "Un exemple de notre travail"
-                  : "An example of our work"}
+                {copy.exampleTitle ??
+                  (french
+                    ? "Un exemple de notre travail"
+                    : "An example of our work")}
               </h2>
               <p>{copy.example}</p>
               <a href={service.exampleUrl}>{copy.exampleLink}</a>

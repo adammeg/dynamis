@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 
 export const siteOrigin = "https://www.dynamissolution.tn";
 
+export const agencyTitle =
+  "Development, Marketing Automation & AI Agency in Tunisia";
+export const agencyDescription =
+  "Dynamis Solution is a Tunisian development and marketing agency. We build web applications, produce campaign photography and integrate CRM automation and AI.";
+
 export function pageMetadata(
   title: string,
   description: string,

@@ -9,10 +9,11 @@ const services = [
   "Web development",
   "SaaS development",
   "Branding & design",
-  "Automation & AI workflows",
+  "AI integration & workflow automation",
+  "Marketing automation & CRM",
   "Marketing & growth",
   "Social media management",
-  "Photo & modeling sessions",
+  "Marketing photo shoots",
   "Business consulting",
 ];
 const timelines = [

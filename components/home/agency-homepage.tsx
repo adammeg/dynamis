@@ -8,6 +8,8 @@ import {
   ArrowUpRight,
   AudioLines,
   Braces,
+  Camera,
+  Mail,
   Globe2,
   Layers3,
   Plus,
@@ -55,18 +57,38 @@ const projects = [
 ];
 
 const expertise = {
+  shoots: {
+    title: "Marketing shoots",
+    icon: Camera,
+    items: [
+      ["photo-modeling-sessions", "Product & restaurant photography"],
+      ["campaign-images", "Campaign & social imagery"],
+    ],
+    description:
+      "Plan the shot list, art direction and edited images for a product launch, menu or campaign.",
+  },
+  marketingAutomation: {
+    title: "Marketing automation",
+    icon: Mail,
+    items: [
+      ["lead-routing", "Lead routing & follow-up"],
+      ["crm-integration", "CRM integration"],
+    ],
+    description:
+      "Carry the campaign source from a form to your CRM, assign the enquiry and give the right person a reminder to follow up.",
+  },
   brand: {
     title: "Brand & creative",
     icon: Layers3,
     items: [
       ["branding-design", "Brand identity & design"],
-      ["photo-modeling-sessions", "Photography & art direction"],
+      ["brand-guidelines", "Brand guidelines"],
     ],
     description:
       "Give your business a recognisable identity, from the first impression to the smallest detail.",
   },
   web: {
-    title: "Web & product",
+    title: "Web & software development",
     icon: Braces,
     items: [
       ["web-development", "Websites & e-commerce"],
@@ -76,7 +98,7 @@ const expertise = {
       "Turn complex ideas into fast websites and digital products your customers can use with confidence.",
   },
   automation: {
-    title: "AI & automation",
+    title: "AI integration",
     icon: Workflow,
     items: [
       ["automation-ai-workflows", "AI workflows & integrations"],
@@ -106,17 +128,17 @@ export function AgencyHomepage() {
           <div className="studio-wrap hero-layout">
             <div className="hero-copy">
               <p className="eyebrow">
-                <span className="signal" /> Independent digital agency in
-                Tunisia
+                <span className="signal" /> Development agency based in Tunisia
               </p>
               <h1 id="hero-title">
-                Digital with
+                Web development,
                 <br />
-                <em>an edge.</em>
+                <em>marketing &amp; AI.</em>
               </h1>
               <p className="hero-description">
-                Dynamis Solution designs brands, builds websites and digital
-                products, and automates the work behind growing businesses.
+                Dynamis builds websites and software, shoots campaign
+                photography, and connects your marketing and sales tools through
+                automation and AI.
               </p>
               <div className="hero-actions">
                 <a className="lime-button" href="#portfolio">
@@ -263,8 +285,7 @@ export function AgencyHomepage() {
                 </h2>
               </div>
               <p>
-                From your first brand identity to the systems behind a growing
-                business.
+                Choose the team for your next build, campaign or integration.
               </p>
             </div>
             <div className="expertise-grid">

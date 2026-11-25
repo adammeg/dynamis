@@ -1,18 +1,22 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { GoogleAnalytics } from "@/components/analytics";
-import { siteOrigin } from "@/lib/site-metadata";
+import {
+  agencyTitle,
+  agencyDescription,
+  siteOrigin,
+} from "@/lib/site-metadata";
+import { services, servicePath } from "@/lib/services";
 import "./globals.css";
 import "./studio.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
   title: {
-    default: "Dynamis Solution | Premium Digital Transformation Agency",
+    default: `Dynamis Solution | ${agencyTitle}`,
     template: "%s | Dynamis Solution",
   },
-  description:
-    "Dynamis Solution is a premium digital transformation agency delivering websites, SaaS products, automation systems, branding, growth strategy, and consulting for ambitious companies.",
+  description: agencyDescription,
   category: "technology",
   icons: {
     icon: "/dynamis-mark.png",
@@ -22,25 +26,23 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.dynamissolution.tn/",
     siteName: "Dynamis Solution",
-    title: "Dynamis Solution | Premium Digital Transformation Agency",
-    description:
-      "Premium websites, SaaS products, automation systems, growth infrastructure, and brand experiences built to attract high-value clients.",
+    title: `Dynamis Solution | ${agencyTitle}`,
+    description: agencyDescription,
     locale: "en_US",
     images: [
       {
-        url: "/webmobile1.webp",
-        width: 1200,
-        height: 630,
-        alt: "Dynamis Solution premium agency site preview",
+        url: "/continuum.webp",
+        width: 1000,
+        height: 1000,
+        alt: "Continuum, a digital form study by Dynamis",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dynamis Solution | Premium Digital Transformation Agency",
-    description:
-      "Web, product, automation, branding, and growth systems for ambitious companies.",
-    images: ["/webmobile1.webp"],
+    title: `Dynamis Solution | ${agencyTitle}`,
+    description: agencyDescription,
+    images: ["/continuum.webp"],
   },
 };
 
@@ -52,12 +54,26 @@ const organizationSchema = {
   alternateName: "Dynamis Solutions",
   url: "https://www.dynamissolution.tn/",
   logo: "https://www.dynamissolution.tn/webmobile.webp",
-  image: "https://www.dynamissolution.tn/webmobile1.webp",
-  description:
-    "Premium digital transformation agency delivering websites, SaaS products, AI workflows, branding, marketing systems, and consulting.",
+  image: "https://www.dynamissolution.tn/continuum.webp",
+  description: agencyDescription,
+  sameAs: ["https://www.linkedin.com/company/dynamis-solution"],
+  makesOffer: services.map(({ en }) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Service",
+      "@id": siteOrigin + servicePath(en) + "#service",
+      name: en.label,
+      url: siteOrigin + servicePath(en),
+    },
+  })),
   email: "contact@dynamissolution.tn",
   telephone: "+21690053729",
-  address: { "@type": "PostalAddress", addressCountry: "TN" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Megrine",
+    addressRegion: "Ben Arous",
+    addressCountry: "TN",
+  },
   areaServed: ["TN", "FR", "EU"],
   contactPoint: [
     {
@@ -77,8 +93,7 @@ const websiteSchema = {
   "@id": "https://www.dynamissolution.tn/#website",
   url: "https://www.dynamissolution.tn/",
   name: "Dynamis Solution",
-  description:
-    "Premium digital transformation agency website for automation, web development, SaaS, branding, and growth services.",
+  description: agencyDescription,
   publisher: { "@id": "https://www.dynamissolution.tn/#organization" },
 };
 
@@ -88,10 +103,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="BFT7sOLB_7cvXTwCc5hPbi29Mtk-zdscHoY0bRwv2oA" />
+        <meta
+          name="google-site-verification"
+          content="BFT7sOLB_7cvXTwCc5hPbi29Mtk-zdscHoY0bRwv2oA"
+        />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         <script
           type="application/ld+json"

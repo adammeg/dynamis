@@ -9,8 +9,8 @@ import { services, servicePath } from "@/lib/services";
 import { pageMetadata } from "@/lib/site-metadata";
 
 export const metadata = pageMetadata(
-  "Agence digitale en Tunisie",
-  "Découvrez notre agence digitale tunisienne, spécialisée en design, développement web, marketing et automatisation.",
+  "Dynamis, agence tunisienne de développement et de marketing",
+  "Découvrez notre équipe à Mégrine, en Tunisie : développement web et logiciel, shooting photo, automatisation marketing et intégration IA.",
   "/about",
   "fr",
 );
@@ -29,9 +29,10 @@ export default function AboutPage() {
             À propos de <em>Dynamis.</em>
           </h1>
           <p className="intro">
-            Basée en Tunisie, notre agence réunit stratégie, design et
-            développement pour aider les entreprises à construire leur présence
-            numérique.
+            Dynamis Solution est une agence de développement et de marketing
+            basée à Mégrine, dans le gouvernorat de Ben Arous. Nous développons
+            des sites et des applications, réalisons des shootings photo et
+            intégrons l’automatisation et l’IA aux outils de nos clients.
           </p>
           <div className="journal-list">
             <div className="article-body" style={{ marginLeft: 0 }}>
@@ -44,9 +45,11 @@ export default function AboutPage() {
               </p>
               <h2>Du lancement à la croissance</h2>
               <p>
-                Référencement naturel, campagnes digitales, réseaux sociaux et
-                automatisation font partie de notre accompagnement. Nous
-                intervenons également sur des projets Web3 et blockchain.
+                Pour un lancement, nous préparons les images de campagne, les
+                pages et les publications. Lorsqu’une demande arrive, un
+                formulaire connecté au CRM peut attribuer le prospect à un
+                commercial. Une intégration IA peut aussi aider un conseiller à
+                classer les questions et à préparer ses réponses.
               </p>
               <h2>Nos services en Tunisie</h2>
               <ul>
