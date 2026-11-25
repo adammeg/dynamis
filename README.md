@@ -136,6 +136,12 @@ For detailed admin setup instructions, see [ADMIN_SETUP.md](./ADMIN_SETUP.md).
 - ✅ Sitemap and robots.txt
 - ✅ Google Search Console ready
 
+## Measuring project enquiries
+
+Set `NEXT_PUBLIC_GA_ID` before building the deployed site. A successful project form submission sends the GA4 event `generate_lead` with `form_name=project_enquiry`. The event contains no form field values. Validation errors, email delivery failures and outbound contact clicks do not fire it.
+
+In GA4, select `generate_lead` as a key event. In an Exploration, use **Session source / medium** and **Landing page + query string** as rows, with **Sessions** and **Key events** as metrics. Select the enquiry event and compare identifiable referrals from `chatgpt.com` and `claude.ai`. A visit without a referrer or campaign tag may appear as direct traffic. For Google AI Search impressions, use the Generative AI performance report in the verified Search Console property where available.
+
 ## Performance Optimization
 
 ### Image Optimization

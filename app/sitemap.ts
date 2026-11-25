@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { caseStudies, caseStudyPath } from "@/lib/case-studies";
 import { getAllPosts } from "@/lib/mdx";
 import { languages, servicePath, services } from "@/lib/services";
 import { siteOrigin } from "@/lib/site-metadata";
@@ -12,6 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...services.flatMap((service) =>
       languages.map((lang) => servicePath(service[lang])),
     ),
+    ...caseStudies.map(caseStudyPath),
     ...posts.map((post) => `/blog/${post.slug}`),
   ];
   return paths.map((path) => ({ url: siteOrigin + path }));

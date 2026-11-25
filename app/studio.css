@@ -1118,3 +1118,10 @@
   gap: 14px;
   margin-bottom: 30px;
 }
+
+.case-cover {
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+  margin: 24px 0 12px;
+}

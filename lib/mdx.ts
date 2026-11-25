@@ -52,6 +52,7 @@ export async function getPostBySlug(slug: string) {
   return {
     ...data,
     title: String(data.title || slug),
+    language: data.language === "fr" ? "fr" : "en",
     excerpt: String(data.excerpt || ""),
     author: String(data.author || "Dynamis Solution"),
     date: data.date ? new Date(data.date).toISOString() : undefined,

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { caseStudies, caseStudyPath } from "@/lib/case-studies";
 import { services, servicePath } from "@/lib/services";
 import {
   ArrowDownRight,
@@ -21,29 +22,6 @@ const clients = [
   { name: "MFAI", mark: "mfai", style: "mfai" },
   { name: "Casa Pasta", mark: "casapasta-logo", style: "casa" },
   { name: "Pizzarium", mark: "pizzarium-logo", style: "pizza" },
-];
-
-const featured = [
-  {
-    name: "Nexus Academy",
-    discipline: "Web development",
-    industry: "Education",
-    image: "academy",
-    mark: "logo-nexus",
-    url: "https://nexusacademy.academy",
-    description:
-      "A learning platform that helps students explore courses and find their way to enrolment.",
-  },
-  {
-    name: "Moutouri",
-    discipline: "Digital product",
-    industry: "Marketplace",
-    image: "moutouri",
-    mark: "moutouri_logo",
-    url: "https://moutouri.tn",
-    description:
-      "A mobile-first marketplace that makes it easier for riders to discover their next motorbike.",
-  },
 ];
 
 const projects = [
@@ -211,13 +189,11 @@ export function AgencyHomepage() {
               </p>
             </div>
             <div className="work-grid">
-              {featured.map((project) => (
-                <a
+              {caseStudies.map((project) => (
+                <Link
                   className="work-card"
-                  href={project.url}
+                  href={caseStudyPath(project)}
                   key={project.name}
-                  target="_blank"
-                  rel="noreferrer"
                 >
                   <div className="work-image">
                     <Image
@@ -244,10 +220,10 @@ export function AgencyHomepage() {
                   </div>
                   <div className="project-title">
                     <h3>{project.name}</h3>
-                    <ArrowUpRight aria-label="Visit project" size={25} />
+                    <ArrowRight aria-hidden="true" size={25} />
                   </div>
                   <p>{project.description}</p>
-                </a>
+                </Link>
               ))}
             </div>
             <details className="more-work">

@@ -32,19 +32,26 @@ export default async function BlogPage() {
           </p>
           <div className="journal-list">
             {posts.map((post) => (
-              <Link href={`/blog/${post.slug}`} key={post.slug}>
+              <Link
+                href={`/blog/${post.slug}`}
+                key={post.slug}
+                lang={post.language ?? "en"}
+              >
                 <span className="eyebrow">{post.category}</span>
                 <div>
                   <h2>{post.title}</h2>
                   <p>{post.excerpt}</p>
                   {post.date && (
                     <small>
-                      {new Date(post.date).toLocaleDateString("en-GB", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                        timeZone: "UTC",
-                      })}{" "}
+                      {new Date(post.date).toLocaleDateString(
+                        post.language === "fr" ? "fr-TN" : "en-GB",
+                        {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                          timeZone: "UTC",
+                        },
+                      )}{" "}
                       · {post.readTime}
                     </small>
                   )}

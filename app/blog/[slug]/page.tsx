@@ -26,6 +26,7 @@ export async function generateMetadata({
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: "article",
+      locale: post.language === "fr" ? "fr_TN" : "en_US",
       title: post.title,
       description: post.excerpt,
       publishedTime: post.date,
@@ -50,6 +51,7 @@ export default async function BlogPostPage({ params }: ArticleProps) {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: post.title,
+      inLanguage: post.language,
       description: post.excerpt,
       datePublished: post.date,
       image: new URL(post.image || "/continuum.webp", base).href,
@@ -80,11 +82,16 @@ export default async function BlogPostPage({ params }: ArticleProps) {
   return (
     <div className="studio">
       <StudioHeader />
-      <main id="main-content" className="light-section inner-page">
+      <main
+        lang={post.language}
+        id="main-content"
+        className="light-section inner-page"
+      >
         <article className="studio-wrap">
           <header className="article-heading">
             <Link className="text-cta" href="/blog">
-              <ArrowLeft size={16} /> All insights
+              <ArrowLeft size={16} />{" "}
+              {post.language === "fr" ? "Tous les articles" : "All insights"}
             </Link>
             <p className="eyebrow">
               <span className="dash" />
@@ -99,12 +106,15 @@ export default async function BlogPostPage({ params }: ArticleProps) {
                   {" "}
                   ·{" "}
                   <time dateTime={post.date}>
-                    {new Date(post.date).toLocaleDateString("en-GB", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                      timeZone: "UTC",
-                    })}
+                    {new Date(post.date).toLocaleDateString(
+                      post.language === "fr" ? "fr-TN" : "en-GB",
+                      {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                        timeZone: "UTC",
+                      },
+                    )}
                   </time>
                 </>
               )}
@@ -120,7 +130,10 @@ export default async function BlogPostPage({ params }: ArticleProps) {
           />
           <div className="article-body">
             <Link className="text-cta" href="/#lead-generation">
-              Discuss your project <ArrowUpRight size={16} />
+              {post.language === "fr"
+                ? "Discuter de votre projet"
+                : "Discuss your project"}{" "}
+              <ArrowUpRight size={16} />
             </Link>
           </div>
           <script

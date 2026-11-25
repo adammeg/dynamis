@@ -69,7 +69,7 @@ export const services: Service[] = [
   },
   {
     key: "web",
-    exampleUrl: "https://nexusacademy.academy",
+    exampleUrl: "/work/nexus-academy",
     en: {
       slug: "web-development",
       title: "Web Design & Development Agency in Tunisia",
@@ -89,8 +89,8 @@ export const services: Service[] = [
         ],
       ],
       example:
-        "For Nexus Academy, Dynamis worked on the route from discovering a course to enrolment. Visitors can explore the education platform directly.",
-      exampleLink: "Visit Nexus Academy",
+        "For Nexus Academy, Dynamis worked on the route from discovering a course to enrolment.",
+      exampleLink: "Read the Nexus Academy case study",
     },
     fr: {
       slug: "creation-site-web",
@@ -111,8 +111,8 @@ export const services: Service[] = [
         ],
       ],
       example:
-        "Pour Nexus Academy, Dynamis a travaillé sur le parcours qui mène de la découverte d’un cours à l’inscription. La plateforme permet de parcourir les formations proposées.",
-      exampleLink: "Découvrir Nexus Academy",
+        "Pour Nexus Academy, Dynamis a travaillé sur le parcours qui mène de la découverte d’un cours à l’inscription.",
+      exampleLink: "Lire l’étude de cas Nexus Academy (en anglais)",
     },
   },
   {

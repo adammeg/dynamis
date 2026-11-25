@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { trackProjectEnquiry } from "@/components/analytics";
 import { submitContactForm } from "@/app/actions/contact";
 
 const services = [
@@ -37,7 +38,10 @@ export function ContactForm() {
     try {
       const response = await submitContactForm(data);
       setResult(response);
-      if (response.success) form.reset();
+      if (response.success) {
+        form.reset();
+        trackProjectEnquiry();
+      }
     } catch {
       setResult({
         success: false,

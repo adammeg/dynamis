@@ -109,6 +109,22 @@ export default async function ServicePage({ params }: Props) {
               </h2>
               <p>{copy.example}</p>
               <a href={service.exampleUrl}>{copy.exampleLink}</a>
+              {service.key === "web" && (
+                <p>
+                  <Link href="/work/moutouri">
+                    {french
+                      ? "Étude de cas : la marketplace moto Moutouri (en anglais)"
+                      : "Read how Dynamis launched the Moutouri motorbike marketplace"}
+                  </Link>
+                </p>
+              )}
+              {service.key === "web" && french && (
+                <p>
+                  <Link href="/blog/prix-site-ecommerce-tunisie">
+                    Combien coûte la création d’un site e-commerce en Tunisie ?
+                  </Link>
+                </p>
+              )}
             </section>
             <p>
               <Link href="/#lead-generation" className="text-cta">
