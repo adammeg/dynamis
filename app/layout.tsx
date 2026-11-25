@@ -1,29 +1,18 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { GoogleAnalytics } from "@/components/analytics";
+import { siteOrigin } from "@/lib/site-metadata";
 import "./globals.css";
 import "./studio.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.dynamissolution.tn"),
+  metadataBase: new URL(siteOrigin),
   title: {
     default: "Dynamis Solution | Premium Digital Transformation Agency",
     template: "%s | Dynamis Solution",
   },
   description:
     "Dynamis Solution is a premium digital transformation agency delivering websites, SaaS products, automation systems, branding, growth strategy, and consulting for ambitious companies.",
-  keywords: [
-    "digital transformation agency Tunisia",
-    "web development agency Tunisia",
-    "automation agency Tunisia",
-    "AI workflows Tunisia",
-    "SaaS development agency",
-    "branding agency Tunisia",
-    "social media management Tunisia",
-    "marketing growth agency Tunisia",
-    "business consulting Tunisia",
-    "premium web design Tunisia",
-  ],
   category: "technology",
   icons: {
     icon: "/dynamis-mark.png",
@@ -53,17 +42,6 @@ export const metadata: Metadata = {
       "Web, product, automation, branding, and growth systems for ambitious companies.",
     images: ["/webmobile1.webp"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
 };
 
 const organizationSchema = {
@@ -79,6 +57,7 @@ const organizationSchema = {
     "Premium digital transformation agency delivering websites, SaaS products, AI workflows, branding, marketing systems, and consulting.",
   email: "contact@dynamissolution.tn",
   telephone: "+21690053729",
+  address: { "@type": "PostalAddress", addressCountry: "TN" },
   areaServed: ["TN", "FR", "EU"],
   contactPoint: [
     {

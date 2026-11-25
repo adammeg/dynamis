@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { services, servicePath } from "@/lib/services";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -75,8 +76,8 @@ const projects = [
   },
 ];
 
-const expertise = [
-  {
+const expertise = {
+  brand: {
     title: "Brand & creative",
     icon: Layers3,
     items: [
@@ -86,7 +87,7 @@ const expertise = [
     description:
       "Give your business a recognisable identity, from the first impression to the smallest detail.",
   },
-  {
+  web: {
     title: "Web & product",
     icon: Braces,
     items: [
@@ -96,7 +97,7 @@ const expertise = [
     description:
       "Turn complex ideas into fast websites and digital products your customers can use with confidence.",
   },
-  {
+  automation: {
     title: "AI & automation",
     icon: Workflow,
     items: [
@@ -106,7 +107,7 @@ const expertise = [
     description:
       "Connect your existing tools and simplify the repetitive work behind sales, support, and delivery.",
   },
-  {
+  growth: {
     title: "Marketing & growth",
     icon: AudioLines,
     items: [
@@ -116,7 +117,7 @@ const expertise = [
     description:
       "Reach the right people with focused campaigns, original content, and clear reporting.",
   },
-];
+};
 
 export function AgencyHomepage() {
   return (
@@ -127,7 +128,8 @@ export function AgencyHomepage() {
           <div className="studio-wrap hero-layout">
             <div className="hero-copy">
               <p className="eyebrow">
-                <span className="signal" /> Independent digital agency
+                <span className="signal" /> Independent digital agency in
+                Tunisia
               </p>
               <h1 id="hero-title">
                 Digital with
@@ -135,8 +137,8 @@ export function AgencyHomepage() {
                 <em>an edge.</em>
               </h1>
               <p className="hero-description">
-                We build distinctive brands, digital products, and automation
-                systems for ambitious businesses.
+                Dynamis Solution designs brands, builds websites and digital
+                products, and automates the work behind growing businesses.
               </p>
               <div className="hero-actions">
                 <a className="lime-button" href="#portfolio">
@@ -290,20 +292,34 @@ export function AgencyHomepage() {
               </p>
             </div>
             <div className="expertise-grid">
-              {expertise.map(({ title, icon: Icon, items, description }) => (
-                <article key={title}>
-                  <Icon size={29} strokeWidth={1.4} />
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                  <ul>
-                    {items.map(([id, item]) => (
-                      <li id={id} key={id}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
+              {services.map((service) => {
+                const {
+                  title,
+                  icon: Icon,
+                  items,
+                  description,
+                } = expertise[service.key];
+                return (
+                  <article key={title}>
+                    <Icon size={29} strokeWidth={1.4} />
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                    <ul>
+                      {items.map(([id, item]) => (
+                        <li id={id} key={id}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      className="service-link"
+                      href={servicePath(service.en)}
+                    >
+                      {service.en.label} <ArrowRight size={14} />
+                    </Link>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>

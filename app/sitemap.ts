@@ -1,34 +1,18 @@
-import type { MetadataRoute } from 'next'
-import { getAllPosts } from '@/lib/mdx'
+import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/mdx";
+import { languages, servicePath, services } from "@/lib/services";
+import { siteOrigin } from "@/lib/site-metadata";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.dynamissolution.tn'
-  const now = new Date()
-
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-  ]
-
-  const posts = await getAllPosts()
-
-  const blogRoutes: MetadataRoute.Sitemap = posts.map(post => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.date ? new Date(post.date) : now,
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  }))
-
-  return [...staticRoutes, ...blogRoutes]
+  const posts = await getAllPosts();
+  const paths = [
+    "/",
+    "/about",
+    "/blog",
+    ...services.flatMap((service) =>
+      languages.map((lang) => servicePath(service[lang])),
+    ),
+    ...posts.map((post) => `/blog/${post.slug}`),
+  ];
+  return paths.map((path) => ({ url: siteOrigin + path }));
 }
-

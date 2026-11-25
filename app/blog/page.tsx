@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/site-metadata";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import {
@@ -7,12 +7,11 @@ import {
 } from "@/components/home/studio-navigation";
 import { getAllPosts } from "@/lib/mdx";
 
-export const metadata: Metadata = {
-  title: "Insights on Design, Development & Growth",
-  description:
-    "Articles from Dynamis Solution on web development, mobile apps, blockchain, and digital marketing.",
-  alternates: { canonical: "/blog" },
-};
+export const metadata = pageMetadata(
+  "Insights on Web Development & Digital Products",
+  "Read practical guides from Dynamis Solution on web development, mobile apps and blockchain for businesses in Tunisia.",
+  "/blog",
+);
 
 export default async function BlogPage() {
   const posts = await getAllPosts();

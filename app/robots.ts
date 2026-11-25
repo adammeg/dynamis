@@ -1,16 +1,9 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { siteOrigin } from "@/lib/site-metadata";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/admin'],
-      },
-    ],
-    sitemap: 'https://www.dynamissolution.tn/sitemap.xml',
-  }
+    rules: { userAgent: "*", allow: "/", disallow: "/api/" },
+    sitemap: siteOrigin + "/sitemap.xml",
+  };
 }
-
-

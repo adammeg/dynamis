@@ -1096,3 +1096,25 @@
     display: block;
   }
 }
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: var(--lime);
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.expertise-grid .service-link svg {
+  margin: 0;
+  flex: none;
+}
+.service-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
