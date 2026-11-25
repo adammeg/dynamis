@@ -286,7 +286,7 @@ export const services: Service[] = [
   },
   {
     key: "brand",
-    exampleUrl: "https://www.instagram.com/casapastabar/",
+    exampleUrl: "https://www.instagram.com/casapasta.tn",
     en: {
       slug: "branding-design",
       title: "Brand Identity & Design Agency in Tunisia",
