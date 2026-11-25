@@ -1,20 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { GoogleAnalytics } from "@/components/analytics";
-import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-
-const bodyFont = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const displayFont = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-});
+import "./studio.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dynamissolution.tn"),
@@ -38,7 +26,7 @@ export const metadata: Metadata = {
   ],
   category: "technology",
   icons: {
-    icon: "/webmobile.webp",
+    icon: "/dynamis-mark.png",
     apple: "/webmobile.webp",
   },
   openGraph: {
@@ -92,11 +80,6 @@ const organizationSchema = {
   email: "contact@dynamissolution.tn",
   telephone: "+21690053729",
   areaServed: ["TN", "FR", "EU"],
-  sameAs: [
-    "https://www.linkedin.com/",
-    "https://www.instagram.com/",
-    "https://www.facebook.com/",
-  ],
   contactPoint: [
     {
       "@type": "ContactPoint",
@@ -124,7 +107,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" className={`${bodyFont.variable} ${displayFont.variable}`}>
+    <html lang="en">
       <head>
         <meta name="google-site-verification" content="BFT7sOLB_7cvXTwCc5hPbi29Mtk-zdscHoY0bRwv2oA" />
         <script
